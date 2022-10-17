@@ -1,36 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3db3455d-8009-41ab-877f-e7e64724d7e1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATM.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATMTest$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATMTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATMTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Account.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FizzBuzz.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FizzBuzz.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GuessingGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GuessingGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GuessingGameTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GuessingGameTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hello.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hello.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toolbox.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Welcome.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Welcome.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WelcomeTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WelcomeTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab2.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3/lab3/src/lab3part1/SmartCard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3/lab3/src/lab3part2/SmartCard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3/lab3/src/lab3part2/Tester.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled.iml" beforeDir="false" />
+    <list default="true" id="3db3455d-8009-41ab-877f-e7e64724d7e1" name="Changes" comment="changing folder arrangement">
+      <change afterPath="$PROJECT_DIR$/lab3.zip" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,25 +23,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/bryan/Documents/Uni Work/Programming 1&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/bryan/Documents/Uni Work/Programming 1",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Tester" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lab3part1.Tester" />
@@ -138,8 +109,16 @@
       <workItem from="1664827601118" duration="113000" />
       <workItem from="1664827981720" duration="27704000" />
       <workItem from="1665993779910" duration="2209000" />
-      <workItem from="1666037951080" duration="1056000" />
+      <workItem from="1666037951080" duration="1456000" />
     </task>
+    <task id="LOCAL-00001" summary="changing folder arrangement">
+      <created>1666039382379</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666039382379</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,5 +137,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="changing folder arrangement" />
+    <option name="LAST_COMMIT_MESSAGE" value="changing folder arrangement" />
   </component>
 </project>
