@@ -1,7 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3db3455d-8009-41ab-877f-e7e64724d7e1" name="Changes" comment="" />
+    <list default="true" id="3db3455d-8009-41ab-877f-e7e64724d7e1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_jupiter.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ATM.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ATM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ATMTest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ATMTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ATMTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FizzBuzz.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FizzBuzz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GuessingGame.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GuessingGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GuessingGameTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GuessingGameTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hello.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hello.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HelloTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HelloTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Toolbox.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Toolbox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab1.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab1/lab1part1/Hello.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab1/lab1part2/GuessingGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab1/lab1part3/FizzBuzz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab2.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab2/lab2part1/ATM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab2/lab2part2/ATM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab2/lab2part3/ATM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/.idea/checkstyle/comp1202_checks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/.idea/checkstyle/suppressions.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/.idea/libraries/junit_jupiter.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/lab3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/src/lab3part1/SmartCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/src/lab3part1/Tester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/src/lab3part3/Door.avaj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/test/lab3part1/SmartCardTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/test/lab3part2/CardLockTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/test/lab3part2/SmartCardTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/test/lab3part3/CardLockTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/test/lab3part3/SmartCardTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/test/lab3part3/TesterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dog.class" beforeDir="false" afterPath="$PROJECT_DIR$/Dog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OutputCapturer.class" beforeDir="false" afterPath="$PROJECT_DIR$/OutputCapturer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WelcomeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/WelcomeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled.iml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,28 +65,79 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2FdgJIoYIlcdQdgRabqlyHqImmH" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/bryan/Documents/Uni Work/Programming 1",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Tester" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lab3part1.Tester" />
+      <module name="untitled" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lab3part1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Welcome" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Welcome" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Welcome" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="3db3455d-8009-41ab-877f-e7e64724d7e1" name="Changes" comment="" />
       <created>1664827307471</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664827307471</updated>
+      <workItem from="1664827564146" duration="34000" />
+      <workItem from="1664827601118" duration="113000" />
+      <workItem from="1664827981720" duration="27704000" />
+      <workItem from="1665993779910" duration="2209000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -43,5 +149,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
