@@ -1,4 +1,4 @@
-package lab6part2;
+package lab6part3;
 
 public class Parrot extends Omnivore {
   public Parrot(String name, int age) {
