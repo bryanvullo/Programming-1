@@ -1,7 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3db3455d-8009-41ab-877f-e7e64724d7e1" name="Changes" comment="changing folder arrangement" />
+    <list default="true" id="6fd83a13-db53-4481-8cc5-5f157f1e03d4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Coursework/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Coursework/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Coursework/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Coursework/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab5/.idea/libraries/junit_jupiter.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab5/src/lab5part2/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab5/src/lab5part2/WordGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab5/src/lab5part3/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab5/src/lab5part3/WordGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab7/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab7/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab7/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab7/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab7/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab7/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab7/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab7/lab7.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab7/lab7part2/Debug.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Animal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Carnivore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Food.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Herbivore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Meat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Omnivore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Parrot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Plant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Rabbit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Wolf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Animal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Carnivore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Demo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Food.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Herbivore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Meat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Omnivore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Parrot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Plant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Rabbit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Wolf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part3/Bicycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part3/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part3/Cycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part3/JetPlane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part3/Refuelable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part3/RoadVehicle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part3/Train.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part3/Transport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part3/Tricycle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/junit_jupiter.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab5/lab5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/lab5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part1/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part1/Food.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part1/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part1/Meat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part1/Parrot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part1/Plant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part1/Wolf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part2/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part2/Carnivore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part2/Food.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part2/Herbivore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part2/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part2/Meat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part2/Omnivore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part2/Parrot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part2/Plant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part2/Wolf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Carnivore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Food.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Herbivore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Meat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Omnivore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Parrot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Plant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Rabbit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Wolf.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,127 +95,30 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2FdgJIoYIlcdQdgRabqlyHqImmH" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2H2HetLZW3dpP67u3jHqxEiw4WW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/bryan/Documents/Uni Work/Programming 1",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
-}]]></component>
-  <component name="RunManager">
-    <configuration name="Tester" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lab3part1.Tester" />
-      <module name="untitled" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lab3part1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Welcome" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Welcome" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="lab3part3.Tester" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="lab3part3.Tester" />
-      <module name="untitled" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lab3part3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="test" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="test" />
-      <module name="untitled" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lab3part3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Welcome" />
-      </list>
-    </recent_temporary>
-  </component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3db3455d-8009-41ab-877f-e7e64724d7e1" name="Changes" comment="" />
-      <created>1664827307471</created>
+      <changelist id="6fd83a13-db53-4481-8cc5-5f157f1e03d4" name="Changes" comment="" />
+      <created>1667476361042</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1664827307471</updated>
-      <workItem from="1664827564146" duration="34000" />
-      <workItem from="1664827601118" duration="113000" />
-      <workItem from="1664827981720" duration="27704000" />
-      <workItem from="1665993779910" duration="2209000" />
-      <workItem from="1666037951080" duration="1977000" />
+      <updated>1667476361042</updated>
+      <workItem from="1667476362202" duration="8000" />
+      <workItem from="1667476394080" duration="2000" />
     </task>
-    <task id="LOCAL-00001" summary="changing folder arrangement">
-      <created>1666039382379</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1666039382379</updated>
-    </task>
-    <task id="LOCAL-00002" summary="changing folder arrangement">
-      <created>1666039424530</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1666039424530</updated>
-    </task>
-    <task id="LOCAL-00003" summary="changing folder arrangement">
-      <created>1666039820840</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1666039820841</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,10 +134,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="changing folder arrangement" />
-    <option name="LAST_COMMIT_MESSAGE" value="changing folder arrangement" />
   </component>
 </project>
