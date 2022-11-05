@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a6d0c56-6f76-4918-98d5-17368b240cff" name="Changes" comment="Initial commit, made a musician interface and person class. with violinist, pianist, cellist child classes">
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Coursework.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/people/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/people/musicians/Cellist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/people/musicians/Musician.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/people/musicians/Pianist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/people/musicians/Violinist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/SoundSystem.java" afterDir="false" />
-    </list>
+    <list default="true" id="6a6d0c56-6f76-4918-98d5-17368b240cff" name="Changes" comment="Main method which plays a violin melody" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,8 +48,30 @@
       <option name="presentableId" value="Default" />
       <updated>1667476666194</updated>
       <workItem from="1667476667315" duration="660000" />
-      <workItem from="1667477366732" duration="8043000" />
+      <workItem from="1667477366732" duration="8158000" />
     </task>
+    <task id="LOCAL-00001" summary="Main method which plays a violin melody">
+      <created>1667512474757</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667512474757</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Main method which plays a violin melody">
+      <created>1667512490760</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667512490760</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Main method which plays a violin melody">
+      <created>1667512506804</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667512506804</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,6 +90,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit, made a musician interface and person class. with violinist, pianist, cellist child classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit, made a musician interface and person class. with violinist, pianist, cellist child classes" />
+    <MESSAGE value="Main method which plays a violin melody" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main method which plays a violin melody" />
   </component>
 </project>
