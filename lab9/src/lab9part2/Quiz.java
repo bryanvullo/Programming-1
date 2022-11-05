@@ -19,8 +19,7 @@ public class Quiz {
       String answer = myToolBox.readStringFromCmd(); //takes answe
       if (answer.equals(flashCard.getAnswer())) { //compares answers
         System.out.println("right");
-      }
-      else {
+      } else {
         System.out.println("wrong");
         System.out.println("the correct answer is: " + flashCard.getAnswer());
       }

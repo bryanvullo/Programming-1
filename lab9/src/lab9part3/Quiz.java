@@ -20,7 +20,7 @@ public class Quiz {
   public void play() {
     System.out.println("Would you like to save your results? [Y/N]"); //asks user if they would like to save their result
     String saveResults = myToolBox.readStringFromCmd();
-    while ( !(saveResults.equals("Y") || saveResults.equals("N")) ) { //validates answer
+    while (!(saveResults.equals("Y") || saveResults.equals("N"))) { //validates answer
       System.out.println("Would you like to save your results? [Y/N]");
       saveResults = myToolBox.readStringFromCmd();
     }
@@ -39,10 +39,10 @@ public class Quiz {
         System.out.println("the correct answer is: " + flashCard.getAnswer());
         results.add(flashCard.getQuestion() + "," + answer + ",wrong"); //adds the result to the results array
       }
-      questionCounter +=1; //increments counter for total questions
+      questionCounter += 1; //increments counter for total questions
     }
     if (saveResults.equals("Y")) { //if user chose to save their results, then call save method
-      float percentage = (float) correctCounter/questionCounter * 100; //calculates percentage of correct questions
+      float percentage = (float) correctCounter / questionCounter * 100; //calculates percentage of correct questions
       results.add(correctCounter + "," + questionCounter + "," + percentage); //adds the final score to the array
       save();
     }

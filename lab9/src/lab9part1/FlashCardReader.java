@@ -4,14 +4,14 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
 public class FlashCardReader {
   BufferedReader reader;
 
   public FlashCardReader(String file) {
     try {
       reader = new BufferedReader(new FileReader(file));
-    }
-    catch (FileNotFoundException e) {
+    } catch (FileNotFoundException e) {
       System.err.println(e + ": file not found");
     }
   }
@@ -19,8 +19,7 @@ public class FlashCardReader {
   public String getLine() {
     try {
       return reader.readLine();
-    }
-    catch (IOException e) {
+    } catch (IOException e) {
       System.err.println(e + ": unable to read next line");
       return null;
     }
@@ -29,8 +28,7 @@ public class FlashCardReader {
   public boolean fileIsReady() {
     try {
       return reader.ready();
-    }
-    catch (Exception e) {
+    } catch (Exception e) {
       System.err.println(e + ": file is not ready");
       return false;
     }
