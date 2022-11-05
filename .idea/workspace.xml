@@ -2,90 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fd83a13-db53-4481-8cc5-5f157f1e03d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Coursework/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Coursework/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Coursework/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Coursework/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab5/.idea/libraries/junit_jupiter.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab5/src/lab5part2/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab5/src/lab5part2/WordGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab5/src/lab5part3/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab5/src/lab5part3/WordGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab7/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab7/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab7/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab7/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab7/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab7/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab7/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab7/lab7.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab7/lab7part2/Debug.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Carnivore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Food.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Herbivore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Meat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Omnivore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Parrot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Plant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Rabbit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part1/Wolf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Carnivore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Demo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Food.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Herbivore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Meat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Omnivore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Parrot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Plant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Rabbit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part2/Wolf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part3/Bicycle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part3/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part3/Cycle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part3/JetPlane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part3/Refuelable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part3/RoadVehicle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part3/Train.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part3/Transport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab8/src/lab8part3/Tricycle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/junit_jupiter.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab5/lab5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/lab5.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part1/Animal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part1/Food.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part1/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part1/Meat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part1/Parrot.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part1/Plant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part1/Wolf.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part2/Animal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part2/Carnivore.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part2/Food.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part2/Herbivore.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part2/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part2/Meat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part2/Omnivore.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part2/Parrot.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part2/Plant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part2/Wolf.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Animal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Carnivore.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Food.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Herbivore.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Meat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Omnivore.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Parrot.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Plant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Rabbit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/lab6/lab6part3/Wolf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab5" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,13 +18,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/bryan/Documents/Uni Work/Programming 1"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -118,6 +36,7 @@
       <updated>1667476361042</updated>
       <workItem from="1667476362202" duration="8000" />
       <workItem from="1667476394080" duration="2000" />
+      <workItem from="1667651627278" duration="3000" />
     </task>
     <servers />
   </component>
