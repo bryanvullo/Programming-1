@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Pianist extends Person implements Musician {
+
   private String instrument = "Piano";
   final int instrumentID = 1;
   final int SOFT = 75;
@@ -23,6 +24,7 @@ public class Pianist extends Person implements Musician {
     this.soundSystem = soundSystem; //sets sound system
     setSeat(seat); //sets seat
   }
+
   public Pianist(String name, SoundSystem soundSystem) {
     super(name); //sets name
     this.soundSystem = soundSystem; //sets sound system
@@ -30,7 +32,8 @@ public class Pianist extends Person implements Musician {
 
   public void setSeat(int seat) {
     this.seat = seat; //sets seat to given seat
-    soundSystem.setInstrument(this.seat, instrumentID); //sets the sound system the instrument and seat
+    soundSystem.setInstrument(this.seat,
+        instrumentID); //sets the sound system the instrument and seat
   }
 
   public void readScore(int[] notes, boolean soft) {
@@ -40,8 +43,7 @@ public class Pianist extends Person implements Musician {
     nextNote = this.notes.iterator(); //sets the iterator
     if (soft) { //sets the loudness
       loudness = SOFT;
-    }
-    else {
+    } else {
       loudness = LOUD;
     }
   }

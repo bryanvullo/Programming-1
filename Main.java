@@ -5,15 +5,16 @@ import people.musicians.Violinist;
 import utils.SoundSystem;
 
 public class Main {
+
   static SoundSystem mySoundSystem;
+
   public static void main(String[] args) {
     try {
       mySoundSystem = new SoundSystem();
-    }
-    catch (Exception e) {
+    } catch (Exception e) {
       System.out.println(e);
     }
-    Violinist myViolinist = new Violinist("Violet", mySoundSystem,1);
+    Violinist myViolinist = new Violinist("Violet", mySoundSystem, 1);
     Pianist myPianist = new Pianist("Piero", mySoundSystem, 2);
     Cellist myCellist = new Cellist("Ciara", mySoundSystem, 3);
 
@@ -28,8 +29,8 @@ public class Main {
     System.out.println(myCellist.getSeat()); //this should be null, it is not
 
     int[] score =
-            {57, 59, 62, 59, 66, 0, 66, 0, 64, 0, 57, 59, 62, 59, 64, 0, 64, 0,
-                    62, 0, 0, 57, 59, 62, 59, 62, 0, 64, 61, 0, 57, 0, 57, 64, 0, 62};
+        {57, 59, 62, 59, 66, 0, 66, 0, 64, 0, 57, 59, 62, 59, 64, 0, 64, 0,
+            62, 0, 0, 57, 59, 62, 59, 62, 0, 64, 61, 0, 57, 0, 57, 64, 0, 62};
 
     myCellist.readScore(score, true);
     myViolinist.readScore(score, true);
@@ -41,8 +42,7 @@ public class Main {
         myOrchestra.playNextNote();
         Thread.sleep(175);
       }
-    }
-    catch (Exception e) {
+    } catch (Exception e) {
       System.out.println(e);
     }
 
@@ -54,8 +54,7 @@ public class Main {
         myOrchestra.playNextNote();
         Thread.sleep(175);
       }
-    }
-    catch (Exception e) {
+    } catch (Exception e) {
       System.out.println(e);
     }
   }

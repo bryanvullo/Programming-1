@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Orchestra {
+
   HashMap<Integer, Musician> seating = new HashMap<Integer, Musician>();
 
   public Orchestra() {
