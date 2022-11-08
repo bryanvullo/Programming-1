@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a6d0c56-6f76-4918-98d5-17368b240cff" name="Changes" comment="Main method which plays a violin melody" />
+    <list default="true" id="6a6d0c56-6f76-4918-98d5-17368b240cff" name="Changes" comment="Orchestra">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Coursework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Coursework.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestra/Orchestra.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestra/Orchestra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coursework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coursework/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coursework/people/musicians/Cellist.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coursework/people/musicians/Cellist.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/musicians/Cellist.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/musicians/Cellist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/musicians/Pianist.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/musicians/Pianist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/musicians/Violinist.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/musicians/Violinist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/src/Main.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,23 +32,57 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2H2IHbhMQPCFQxwSybnFydAfmEl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "create.test.in.the.same.root": "true"
+    "create.test.in.the.same.root": "true",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "/Users/bryan/Documents/Uni Work/Programming 1/Coursework",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="orchestra" />
+      <recent name="tests" />
       <recent name="people" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="tests in Coursework" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Coursework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.tests in Coursework" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -49,6 +94,8 @@
       <updated>1667476666194</updated>
       <workItem from="1667476667315" duration="660000" />
       <workItem from="1667477366732" duration="8158000" />
+      <workItem from="1667917587409" duration="7843000" />
+      <workItem from="1667928505249" duration="1590000" />
     </task>
     <task id="LOCAL-00001" summary="Main method which plays a violin melody">
       <created>1667512474757</created>
@@ -71,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667512506804</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Orchestra">
+      <created>1667928415829</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667928415829</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -91,6 +145,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit, made a musician interface and person class. with violinist, pianist, cellist child classes" />
     <MESSAGE value="Main method which plays a violin melody" />
-    <option name="LAST_COMMIT_MESSAGE" value="Main method which plays a violin melody" />
+    <MESSAGE value="Orchestra" />
+    <option name="LAST_COMMIT_MESSAGE" value="Orchestra" />
   </component>
 </project>

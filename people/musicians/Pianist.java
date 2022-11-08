@@ -5,6 +5,7 @@ import utils.SoundSystem;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class Pianist extends Person implements Musician {
   private String instrument = "Piano";
@@ -12,7 +13,7 @@ public class Pianist extends Person implements Musician {
   final int SOFT = 75;
   final int LOUD = 150;
   private int loudness;
-  private ArrayList<Integer> notes = new ArrayList<Integer>();
+  private List<Integer> notes = new ArrayList<Integer>();
   public Iterator<Integer> nextNote;
   private int seat;
   private SoundSystem soundSystem;
@@ -21,6 +22,10 @@ public class Pianist extends Person implements Musician {
     super(name); //sets name
     this.soundSystem = soundSystem; //sets sound system
     setSeat(seat); //sets seat
+  }
+  public Pianist(String name, SoundSystem soundSystem) {
+    super(name); //sets name
+    this.soundSystem = soundSystem; //sets sound system
   }
 
   public void setSeat(int seat) {

@@ -45,6 +45,7 @@ public class Orchestra {
       if (seat.getValue() == musician) {
         int seatNumber = seat.getKey();
         seating.put(seatNumber, null);
+        //TODO musician.setSeat(null) instead of an int
         break;
       }
     }
