@@ -13,7 +13,7 @@ public class Cellist extends Person implements Musician {
   final int LOUD = 100;
   private int loudness;
   private ArrayList<Integer> notes = new ArrayList<Integer>();
-  private Iterator<Integer> nextNote;
+  public Iterator<Integer> nextNote;
   private int seat;
   private SoundSystem soundSystem;
 
@@ -26,6 +26,10 @@ public class Cellist extends Person implements Musician {
   public void setSeat(int seat) {
     this.seat = seat; //sets seat to given seat
     soundSystem.setInstrument(this.seat, instrumentID); //sets the sound system the instrument and seat
+  }
+
+  public int getSeat() {
+    return seat;
   }
 
   public void readScore(int[] notes, boolean soft) {

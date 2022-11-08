@@ -1,6 +1,6 @@
 package people.musicians;
 
-interface Musician {
+public interface Musician {
 
   public abstract void setSeat(int seat);
 

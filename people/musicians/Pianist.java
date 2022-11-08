@@ -13,7 +13,7 @@ public class Pianist extends Person implements Musician {
   final int LOUD = 150;
   private int loudness;
   private ArrayList<Integer> notes = new ArrayList<Integer>();
-  private Iterator<Integer> nextNote;
+  public Iterator<Integer> nextNote;
   private int seat;
   private SoundSystem soundSystem;
 
