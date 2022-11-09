@@ -7,4 +7,6 @@ public interface Musician {
   public abstract void readScore(int[] notes, boolean soft);
 
   public abstract void playNextNote();
+
+  public abstract int getInstrumentID();
 }

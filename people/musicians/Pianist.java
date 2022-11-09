@@ -54,4 +54,8 @@ public class Pianist extends Person implements Musician {
       soundSystem.playNote(seat, note, loudness); //plays the note
     }
   }
+
+  public int getInstrumentID() {
+    return instrumentID;
+  }
 }

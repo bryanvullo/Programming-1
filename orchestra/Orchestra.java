@@ -16,10 +16,8 @@ public class Orchestra {
   }
 
   public int sitDown(Musician musician) {
-    for (Musician musicianInSeat : seating.values()) { //only care about the value
-      if (musicianInSeat == musician) {
-        return 2; //musician is already in the orchestra
-      }
+    if (isSeated(musician)) {
+      return 2; //musician is already in the orchestra
     }
     for (Map.Entry<Integer, Musician> seat : seating.entrySet()) { //we want both key and value
       // as we need to check if seat is empty. If it is, then add the musician to that seat

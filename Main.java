@@ -40,7 +40,7 @@ public class Main {
     try {
       while (myCellist.nextNote.hasNext()) {
         myOrchestra.playNextNote();
-        Thread.sleep(175);
+        Thread.sleep(2000); //how long the note is played for
       }
     } catch (Exception e) {
       System.out.println(e);
@@ -52,7 +52,7 @@ public class Main {
     try {
       while (myPianist.nextNote.hasNext()) {
         myOrchestra.playNextNote();
-        Thread.sleep(175);
+        Thread.sleep(2000);
       }
     } catch (Exception e) {
       System.out.println(e);

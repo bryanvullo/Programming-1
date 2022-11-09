@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a6d0c56-6f76-4918-98d5-17368b240cff" name="Changes" comment="test harnesses to test the functionality of the code" />
+    <list default="true" id="6a6d0c56-6f76-4918-98d5-17368b240cff" name="Changes" comment="reformated code using google style">
+      <change afterPath="$PROJECT_DIR$/music/Composition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music/MusicScore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/people/conductors/Conductor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestra/Orchestra.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestra/Orchestra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/musicians/Cellist.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/musicians/Cellist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/musicians/Musician.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/musicians/Musician.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/musicians/Pianist.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/musicians/Pianist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/musicians/Violinist.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/musicians/Violinist.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +20,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -49,6 +60,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="people.conductors" />
       <recent name="orchestra" />
       <recent name="tests" />
       <recent name="people" />
@@ -86,7 +98,7 @@
       <workItem from="1667476667315" duration="660000" />
       <workItem from="1667477366732" duration="8158000" />
       <workItem from="1667917587409" duration="7843000" />
-      <workItem from="1667928505249" duration="2448000" />
+      <workItem from="1667928505249" duration="7831000" />
     </task>
     <task id="LOCAL-00001" summary="Main method which plays a violin melody">
       <created>1667512474757</created>
@@ -130,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667945057637</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="reformated code using google style">
+      <created>1667945818938</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1667945818938</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +172,7 @@
     <MESSAGE value="Orchestra" />
     <MESSAGE value="Orchestra complete -&gt; part 2 of coursework &#10;Orchestra class which contains all the seats and all the musician that are sat at the seats&#10;Has methods that add and remove musicians from seats&#10;also has methods which make all the musicians seated play at once." />
     <MESSAGE value="test harnesses to test the functionality of the code" />
-    <option name="LAST_COMMIT_MESSAGE" value="test harnesses to test the functionality of the code" />
+    <MESSAGE value="reformated code using google style" />
+    <option name="LAST_COMMIT_MESSAGE" value="reformated code using google style" />
   </component>
 </project>
