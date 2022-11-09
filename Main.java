@@ -1,4 +1,7 @@
+import java.util.List;
+import music.CompositionMock;
 import orchestra.Orchestra;
+import people.conductors.Conductor;
 import people.musicians.Cellist;
 import people.musicians.Pianist;
 import people.musicians.Violinist;
@@ -28,34 +31,23 @@ public class Main {
     System.out.println(myOrchestra.isSeated(myCellist));
     System.out.println(myCellist.getSeat()); //this should be null, it is not
 
-    int[] score =
-        {57, 59, 62, 59, 66, 0, 66, 0, 64, 0, 57, 59, 62, 59, 64, 0, 64, 0,
-            62, 0, 0, 57, 59, 62, 59, 62, 0, 64, 61, 0, 57, 0, 57, 64, 0, 62};
+    String[] score =
+        {"57", "59", "62", "59", "66", "0", "66", "0", "64", "0", "57", "59", "62", "59", "64",
+            "0", "64", "0", "62", "0", "0", "57", "59", "62", "59", "62", "0", "64", "61", "0",
+            "57", "0", "57", "64", "0", "62"};
 
-    myCellist.readScore(score, true);
-    myViolinist.readScore(score, true);
-    myPianist.readScore(score, true);
-    myOrchestra.sitDown(myCellist);
+    List<String> scoreList = List.of(score);
 
-    try {
-      while (myCellist.nextNote.hasNext()) {
-        myOrchestra.playNextNote();
-        Thread.sleep(2000); //how long the note is played for
-      }
-    } catch (Exception e) {
-      System.out.println(e);
-    }
+    //using conductor
+    Conductor myConductor = new Conductor("Carl", mySoundSystem);
+    myConductor.registerMusician(myCellist);
+    myConductor.registerMusician(myViolinist);
+    myConductor.registerMusician(myPianist);
 
-    myOrchestra.standUp(myCellist);
-    myOrchestra.sitDown(myPianist);
-
-    try {
-      while (myPianist.nextNote.hasNext()) {
-        myOrchestra.playNextNote();
-        Thread.sleep(2000);
-      }
-    } catch (Exception e) {
-      System.out.println(e);
-    }
+    CompositionMock myComposition = new CompositionMock("RickRoll");
+    myComposition.addScore("Violin", scoreList, true);
+    myComposition.addScore("Cello", scoreList, true);
+    myComposition.addScore("Piano", scoreList, true);
+    myConductor.playComposition(myComposition);
   }
 }

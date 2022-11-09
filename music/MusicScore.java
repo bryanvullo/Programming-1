@@ -16,10 +16,15 @@ public class MusicScore {
     switch (this.instrumentName) {
       case "Cello":
         instrumentID = 43;
+        break;
       case "Violin":
         instrumentID = 41;
+        break;
       case "Piano":
         instrumentID = 1;
+        break;
+      default:
+        System.err.println("this instrument cannot be played");
     }
   }
 
