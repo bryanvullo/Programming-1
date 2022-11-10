@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a6d0c56-6f76-4918-98d5-17368b240cff" name="Changes" comment="final commit of part 3:&#10;reformatted code to google style&#10;implemented composition interface with a CompositionMock class to quilkly test the functionality of the interface. it all works properly" />
+    <list default="true" id="6a6d0c56-6f76-4918-98d5-17368b240cff" name="Changes" comment="final commit of part 3:&#10;reformatted code to google style&#10;implemented composition interface with a CompositionMock class to quilkly test the functionality of the interface. it all works properly">
+      <change afterPath="$PROJECT_DIR$/music/MusicSheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,7 +91,7 @@
       <workItem from="1667476667315" duration="660000" />
       <workItem from="1667477366732" duration="8158000" />
       <workItem from="1667917587409" duration="7843000" />
-      <workItem from="1667928505249" duration="13696000" />
+      <workItem from="1667928505249" duration="19159000" />
     </task>
     <task id="LOCAL-00001" summary="Main method which plays a violin melody">
       <created>1667512474757</created>
@@ -153,7 +156,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668028606693</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="final commit of part 3:&#10;reformatted code to google style&#10;implemented composition interface with a CompositionMock class to quilkly test the functionality of the interface. it all works properly">
+      <created>1668028659124</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1668028659124</updated>
+    </task>
+    <task id="LOCAL-00011" summary="final commit of part 3:&#10;reformatted code to google style&#10;implemented composition interface with a CompositionMock class to quilkly test the functionality of the interface. it all works properly">
+      <created>1668028875089</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1668028875089</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,7 +181,34 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -178,6 +222,7 @@
     <MESSAGE value="test harnesses to test the functionality of the code" />
     <MESSAGE value="reformated code using google style" />
     <MESSAGE value="first commit of part 3:&#10;Added three new classes, MusicScore, Composition, Conductor&#10;MusicScore holds the score for a specific instrument type&#10;Many MusicScore objects are held in a Composition object&#10;The Conductor object utilises the Composition object as well as the Orchestra to manage the piece of music being played." />
+    <MESSAGE value="final commit of part 3:&#10;reformatted code to google style&#10;implemented composition interface with a CompositionMock class to quickly test the functionality of the interface. it all works properly" />
     <MESSAGE value="final commit of part 3:&#10;reformatted code to google style&#10;implemented composition interface with a CompositionMock class to quilkly test the functionality of the interface. it all works properly" />
     <option name="LAST_COMMIT_MESSAGE" value="final commit of part 3:&#10;reformatted code to google style&#10;implemented composition interface with a CompositionMock class to quilkly test the functionality of the interface. it all works properly" />
   </component>
