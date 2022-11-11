@@ -23,14 +23,6 @@ public class Main {
 
     Orchestra myOrchestra = new Orchestra();
 
-    //testing methods
-    System.out.println(myOrchestra.isSeated(myCellist));
-    myOrchestra.sitDown(myCellist);
-    System.out.println(myOrchestra.isSeated(myCellist));
-    myOrchestra.standUp(myCellist);
-    System.out.println(myOrchestra.isSeated(myCellist));
-    System.out.println(myCellist.getSeat()); //this should be null, it is not
-
     String[] score =
         {"57", "59", "62", "59", "66", "0", "66", "0", "64", "0", "57", "59", "62", "59", "64",
             "0", "64", "0", "62", "0", "0", "57", "59", "62", "59", "62", "0", "64", "61", "0",

@@ -11,8 +11,8 @@ public class Violinist extends Person implements Musician {
 
   private String instrument = "Violin";
   private int instrumentID = 41;
-  final int SOFT = 50;
-  final int LOUD = 100;
+  private final int SOFT = 50;
+  private final int LOUD = 100;
   private int loudness;
   private List<Integer> notes = new ArrayList<Integer>();
   public Iterator<Integer> nextNote;
@@ -32,8 +32,8 @@ public class Violinist extends Person implements Musician {
 
   public void setSeat(int seat) {
     this.seat = seat; //sets seat to given seat
-    soundSystem.setInstrument(this.seat,
-        instrumentID); //sets the sound system the instrument and seat
+    soundSystem.setInstrument(this.seat, instrumentID);
+    //sets the sound system the instrument and seat
   }
 
   public void readScore(int[] notes, boolean soft) {
@@ -49,7 +49,7 @@ public class Violinist extends Person implements Musician {
   }
 
   public void playNextNote() {
-    if (nextNote.hasNext()) {
+    if (nextNote.hasNext()) { //checks if there is a note to be played
       int note = nextNote.next(); //gets the next note
       soundSystem.playNote(seat, note, loudness); //plays the note
     }

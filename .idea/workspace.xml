@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a6d0c56-6f76-4918-98d5-17368b240cff" name="Changes" comment="initial commit of part 4:&#10;A new class called MusicSheet which is a hard implementation of the Composition Interface. This is a better and more complete version of the CompositionMock class made in the previous part.">
-      <change afterPath="$PROJECT_DIR$/EcsBandAid.java" afterDir="false" />
+    <list default="true" id="6a6d0c56-6f76-4918-98d5-17368b240cff" name="Changes" comment="initial commit of part 5:&#10;Created the EscBandAid class which will be the main class from which everything else is going to be called from.&#10;The first part of the performForAYear method has been completed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EcsBandAid.java" beforeDir="false" afterPath="$PROJECT_DIR$/EcsBandAid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/CompositionMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/music/CompositionMock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/MusicScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/music/MusicScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/MusicSheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/music/MusicSheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestra/Orchestra.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestra/Orchestra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/conductors/Conductor.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/conductors/Conductor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/musicians/Cellist.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/musicians/Cellist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/musicians/Musician.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/musicians/Musician.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/musicians/Pianist.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/musicians/Pianist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/musicians/Violinist.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/musicians/Violinist.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +102,8 @@
       <workItem from="1667477366732" duration="8158000" />
       <workItem from="1667917587409" duration="7843000" />
       <workItem from="1667928505249" duration="21303000" />
-      <workItem from="1668090090258" duration="4643000" />
+      <workItem from="1668090090258" duration="4771000" />
+      <workItem from="1668124142871" duration="5540000" />
     </task>
     <task id="LOCAL-00001" summary="Main method which plays a violin melody">
       <created>1667512474757</created>
@@ -178,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668073202478</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="initial commit of part 5:&#10;Created the EscBandAid class which will be the main class from which everything else is going to be called from.&#10;The first part of the performForAYear method has been completed">
+      <created>1668108625462</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1668108625462</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +251,7 @@
     <MESSAGE value="final commit of part 3:&#10;reformatted code to google style&#10;implemented composition interface with a CompositionMock class to quickly test the functionality of the interface. it all works properly" />
     <MESSAGE value="final commit of part 3:&#10;reformatted code to google style&#10;implemented composition interface with a CompositionMock class to quilkly test the functionality of the interface. it all works properly" />
     <MESSAGE value="initial commit of part 4:&#10;A new class called MusicSheet which is a hard implementation of the Composition Interface. This is a better and more complete version of the CompositionMock class made in the previous part." />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit of part 4:&#10;A new class called MusicSheet which is a hard implementation of the Composition Interface. This is a better and more complete version of the CompositionMock class made in the previous part." />
+    <MESSAGE value="initial commit of part 5:&#10;Created the EscBandAid class which will be the main class from which everything else is going to be called from.&#10;The first part of the performForAYear method has been completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit of part 5:&#10;Created the EscBandAid class which will be the main class from which everything else is going to be called from.&#10;The first part of the performForAYear method has been completed" />
   </component>
 </project>

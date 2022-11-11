@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MusicSheet implements Composition {
-  String name;
-  String tempo;
-  int length;
-  ArrayList<MusicScore> scores = new ArrayList<MusicScore>();
+  private String name;
+  private String tempo;
+  private int length;
+  private ArrayList<MusicScore> scores = new ArrayList<MusicScore>();
 
   public MusicSheet(String name, String tempo, int length) {
     this.name = name;
@@ -31,7 +31,7 @@ public class MusicSheet implements Composition {
     scores.add(musicScore);
   }
 
-  public int convertNote(String note) {
+  private int convertNote(String note) {
     switch (note) {
       case "C6":
         return 84;
@@ -122,8 +122,12 @@ public class MusicSheet implements Composition {
     return length;
   }
 
+  private String getTempo() {
+    return tempo;
+  }
+
   public int getNoteLength() {
-    switch (tempo) {
+    switch (getTempo()) {
       case "Larghissimo":
         return 1500;
       case "Lento":

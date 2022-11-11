@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class Orchestra {
 
-  HashMap<Integer, Musician> seating = new HashMap<Integer, Musician>();
+  private HashMap<Integer, Musician> seating = new HashMap<Integer, Musician>();
 
   public Orchestra() {
     for (int i = 0; i < 16; i++) { //initialises the seats in the seating hashmap
@@ -21,9 +21,9 @@ public class Orchestra {
     }
     for (Map.Entry<Integer, Musician> seat : seating.entrySet()) { //we want both key and value
       // as we need to check if seat is empty. If it is, then add the musician to that seat
-      if (seat.getValue() == null) {
-        seating.put(seat.getKey(), musician);
-        musician.setSeat(seat.getKey());
+      if (seat.getValue() == null) { //is seat is empty
+        seating.put(seat.getKey(), musician); //add musician to seating
+        musician.setSeat(seat.getKey()); //set the musicians seat
         return 0;
       }
     }
@@ -42,8 +42,8 @@ public class Orchestra {
   public void standUp(Musician musician) {
     for (Map.Entry<Integer, Musician> seat : seating.entrySet()) {
       if (seat.getValue() == musician) {
-        int seatNumber = seat.getKey();
-        seating.put(seatNumber, null);
+        int seatNumber = seat.getKey(); //get the seat number
+        seating.put(seatNumber, null); //set the seat in the orchestra to empty
         //TODO musician.setSeat(null) instead of an int
         break;
       }

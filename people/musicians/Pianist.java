@@ -10,12 +10,12 @@ import java.util.List;
 public class Pianist extends Person implements Musician {
 
   private String instrument = "Piano";
-  final int instrumentID = 1;
-  final int SOFT = 75;
-  final int LOUD = 150;
+  private final int instrumentID = 1;
+  private final int SOFT = 75;
+  private final int LOUD = 150;
   private int loudness;
   private List<Integer> notes = new ArrayList<Integer>();
-  public Iterator<Integer> nextNote;
+  private Iterator<Integer> nextNote;
   private int seat;
   private SoundSystem soundSystem;
 
@@ -32,8 +32,8 @@ public class Pianist extends Person implements Musician {
 
   public void setSeat(int seat) {
     this.seat = seat; //sets seat to given seat
-    soundSystem.setInstrument(this.seat,
-        instrumentID); //sets the sound system the instrument and seat
+    soundSystem.setInstrument(this.seat, instrumentID);
+    //sets the sound system the instrument and seat
   }
 
   public void readScore(int[] notes, boolean soft) {
@@ -49,7 +49,7 @@ public class Pianist extends Person implements Musician {
   }
 
   public void playNextNote() {
-    if (nextNote.hasNext()) {
+    if (nextNote.hasNext()) { //checks to see if there is a note to be played
       int note = nextNote.next(); //gets the next note
       soundSystem.playNote(seat, note, loudness); //plays the note
     }

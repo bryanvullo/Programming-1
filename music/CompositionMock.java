@@ -6,7 +6,7 @@ import java.util.List;
 
 public class CompositionMock implements Composition {
 
-  String name;
+  private String name;
   List<MusicScore> scores = new ArrayList<MusicScore>();
   int length;
 

@@ -2,7 +2,7 @@ package music;
 
 public class MusicScore {
 
-  String instrumentName;
+  private String instrumentName;
   private int[] notes;
   private boolean soft;
   private int instrumentID;

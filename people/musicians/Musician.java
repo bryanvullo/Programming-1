@@ -9,4 +9,6 @@ public interface Musician {
   public abstract void playNextNote();
 
   public abstract int getInstrumentID();
+
+  public abstract String getName();
 }
