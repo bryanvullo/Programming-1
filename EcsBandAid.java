@@ -1,15 +1,16 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 import music.Composition;
 import people.conductors.Conductor;
 import people.musicians.Musician;
 import utils.SoundSystem;
 
 public class EcsBandAid {
-  SoundSystem soundSystem;
-  ArrayList<Musician> musicians = new ArrayList<Musician>();
-  ArrayList<Composition> compositions = new ArrayList<Composition>();
-  Conductor bandConductor;
+  private SoundSystem soundSystem;
+  private ArrayList<Musician> musicians = new ArrayList<Musician>();
+  private ArrayList<Composition> compositions = new ArrayList<Composition>();
+  private Conductor bandConductor;
 
   public EcsBandAid(SoundSystem soundSystem, ArrayList<Musician> musicians,
       ArrayList<Composition> compositions) {
@@ -34,8 +35,34 @@ public class EcsBandAid {
       System.out.println(composition.getName());
     }
     //TODO 2) invite musicians
-    
+    //I will implement that 70% of each musician will accept the invite
+    //ordered randomly, with first come first served basis
+    Collections.shuffle(musicians); //shuffles the musicians ArrayList so it's random
+    for (Musician musician : musicians) {
+      System.out.println(musician.getName() + " has been invited");
+      float random =(float) Math.random(); //random number between 0 and 1
+      if (random <= 0.7) { //musician has accepted the invite (70% acceptance rate)
+        bandConductor.registerMusician(musician);
+        System.out.println(musician.getName() + " has accepted the invite");
+      } else { //else skip to the next musician in the world
+        System.out.println(musician.getName() + " has declined the invite");
+      }
+    }
     //TODO 3) perform the composition
-    //TODO 4) each musician leaves with chance of 50%
+    for (Composition composition : compositionsToPlay) {
+      System.out.println("Now playing " + composition.getName());
+      bandConductor.playComposition(composition);
+    }
+    //TODO 4) each musician IN the band leaves with chance of 50%
+    for (Musician musician : bandConductor.musicians) { //each musician which is registered
+      float random = (float) Math.random(); //random number from 0 to 1
+      if (random <= 0.5) { //50% chance they leave the band
+        bandConductor.deregisterMusician(musician); //remove from the band
+        if (bandConductor.orchestra.isSeated(musician)) { // if seated make them stand up
+          bandConductor.orchestra.standUp(musician);
+        }
+      }
+    }
+    //TODO i dont like the lack of encapsulation above in "todo 4)"
   }
 }
