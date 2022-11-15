@@ -37,6 +37,7 @@ public class Violinist extends Person implements Musician {
   }
 
   public void readScore(int[] notes, boolean soft) {
+    this.notes.clear();
     for (int note : notes) { //reads the notes into the list
       this.notes.add(note);
     }
