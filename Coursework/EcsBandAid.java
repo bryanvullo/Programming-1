@@ -39,30 +39,40 @@ public class EcsBandAid {
     //ordered randomly, with first come first served basis
     Collections.shuffle(musicians); //shuffles the musicians ArrayList so it's random
     for (Musician musician : musicians) {
-      System.out.println(musician.getName() + " has been invited");
-      float random =(float) Math.random(); //random number between 0 and 1
-      if (random <= 0.7) { //musician has accepted the invite (70% acceptance rate)
-        bandConductor.registerMusician(musician);
-        System.out.println(musician.getName() + " has accepted the invite");
-      } else { //else skip to the next musician in the world
-        System.out.println(musician.getName() + " has declined the invite");
+      if (bandConductor.isRegistered(musician)) {
+        //don't invite them
+      } else {
+        System.out.println(musician.getName() + " has been invited");
+        float random = (float) Math.random(); //random number between 0 and 1
+        if (random <= 0.7) { //musician has accepted the invite (70% acceptance rate)
+          bandConductor.registerMusician(musician);
+          System.out.println(musician.getName() + " has accepted the invite");
+        } else { //else skip to the next musician in the world
+          System.out.println(musician.getName() + " has declined the invite");
+        }
       }
     }
+    System.out.println("");
     //TODO 3) perform the composition
     for (Composition composition : compositionsToPlay) {
       System.out.println("Now playing " + composition.getName());
       bandConductor.playComposition(composition);
+      System.out.println("");
     }
     //TODO 4) each musician IN the band leaves with chance of 50%
-    for (Musician musician : bandConductor.musicians) { //each musician which is registered
+    ArrayList<Musician> musiciansToRemove = new ArrayList<Musician>();
+    for (Musician musician : bandConductor.getMusicians()) { //each musician which is registered
       float random = (float) Math.random(); //random number from 0 to 1
       if (random <= 0.5) { //50% chance they leave the band
-        bandConductor.deregisterMusician(musician); //remove from the band
-        if (bandConductor.orchestra.isSeated(musician)) { // if seated make them stand up
-          bandConductor.orchestra.standUp(musician);
-        }
+        musiciansToRemove.add(musician);
+        System.out.println(musician.getName() + " has left the band");
+      } else {
+        System.out.println(musician.getName() + " has remained in the band");
       }
     }
-    //TODO i dont like the lack of encapsulation above in "todo 4)"
+    //I  remove them outside the previous loop to not encounter ConcurrentModificationException
+    for (Musician musician : musiciansToRemove) {
+      bandConductor.deregisterMusician(musician); //remove from the band
+    }
   }
 }
