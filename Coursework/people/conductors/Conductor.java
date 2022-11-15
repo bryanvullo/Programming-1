@@ -21,6 +21,10 @@ public class Conductor extends Person {
     musicians.add(musician);
   }
 
+  public boolean isRegistered(Musician musician) {
+    return musicians.contains(musician);
+  }
+
   public void deregisterMusician(Musician musician) {
     if (orchestra.isSeated(musician)) { //if musician is seated then
       orchestra.standUp(musician); //make them stand up before leaving the band
