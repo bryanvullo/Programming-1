@@ -49,13 +49,13 @@ public class Conductor extends Person {
               System.out.println("Musician " + musician.getName() + " has sat down");
               break;
             case 1:
-              System.out.println("There's no space for " + musician.getName());
+              System.err.println("There's no space for " + musician.getName());
               break;
             case 2:
               System.out.println("Musician " + musician.getName() + " is already sat down");
               break;
             default:
-              System.out.println("There's no space for " + musician.getName());
+              System.err.println("There's no space for " + musician.getName());
           } //prints out the result of the sitDown method
         }
       }
