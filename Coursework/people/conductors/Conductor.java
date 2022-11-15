@@ -10,8 +10,8 @@ import utils.SoundSystem;
 
 public class Conductor extends Person {
   private SoundSystem soundSystem;
-  public ArrayList<Musician> musicians = new ArrayList<Musician>();
-  public Orchestra orchestra = new Orchestra(); //public because EcsBandAid uses this
+  private ArrayList<Musician> musicians = new ArrayList<Musician>();
+  private Orchestra orchestra = new Orchestra(); //public because EcsBandAid uses this
   public Conductor(String name, SoundSystem soundSystem) {
     super(name);
     this.soundSystem = soundSystem;
@@ -22,7 +22,14 @@ public class Conductor extends Person {
   }
 
   public void deregisterMusician(Musician musician) {
+    if (orchestra.isSeated(musician)) { //if musician is seated then
+      orchestra.standUp(musician); //make them stand up before leaving the band
+    }
     musicians.remove(musician);
+  }
+
+  public ArrayList<Musician> getMusicians() {
+    return musicians;
   }
 
   public void playComposition(Composition composition) {
@@ -36,10 +43,13 @@ public class Conductor extends Person {
           switch (result) {
             case 0:
               System.out.println("Musician " + musician.getName() + " has sat down");
+              break;
             case 1:
               System.out.println("There's no space for " + musician.getName());
+              break;
             case 2:
               System.out.println("Musician " + musician.getName() + " is already sat down");
+              break;
             default:
               System.out.println("There's no space for " + musician.getName());
           } //prints out the result of the sitDown method
