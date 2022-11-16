@@ -125,7 +125,7 @@ public class EcsBandAid {
     myCompositions = Helper.createCompositionArrayList(compositionReader);
 
     // so now we have all three objects we need to create the EcsBandAid Object
-    // the SoundSystem, the musicians collection, and the compositions collection
+    // the SoundSystem, the musician collection, and the composition collection
     EcsBandAid myBand = new EcsBandAid(mySoundSystem, myMusicians, myCompositions);
     for (int i = 0; i < years; i++) {
       myBand.performForAYear();
