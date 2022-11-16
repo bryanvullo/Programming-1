@@ -1,6 +1,6 @@
 package lab8part3;
 
-public class Car extends RoadVehicle{
+public class Car extends RoadVehicle implements Refuelable{
   int numberOfWheels = 4;
   boolean locked = true;
 
@@ -13,10 +13,20 @@ public class Car extends RoadVehicle{
   }
 
   public void move() {
-    System.out.println("start engine and press the accelerator to move");
+    //takes in a destination
+    //moves the car to destination
   }
 
   public void load() {
+    //takes in passengers as parameters
     //load passengers into car
+  }
+
+  public void refuel() {
+    System.out.println("The car has been refueled");
+  }
+
+  public int getWheels() {
+    return 4;
   }
 }

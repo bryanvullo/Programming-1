@@ -1,6 +1,6 @@
 package lab8part3;
 
-interface Transport {
+abstract class Transport {
   // all transportation carry some sort of cargo or passengers
   public abstract void load();
 

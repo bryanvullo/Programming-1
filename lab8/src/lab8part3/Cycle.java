@@ -1,6 +1,6 @@
 package lab8part3;
 
-public class Cycle implements Transport{
+abstract class Cycle extends RoadVehicle{
   public void load() {
     System.out.println("sit on the cycle");
   }
@@ -10,6 +10,8 @@ public class Cycle implements Transport{
   }
 
   public void location() {
-    System.out.println("can only operate in roads");
+    super.location();
   }
+
+  abstract int getWheels();
 }
