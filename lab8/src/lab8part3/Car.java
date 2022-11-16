@@ -1,7 +1,7 @@
 package lab8part3;
 
-public class Car extends RoadVehicle implements Refuelable{
-  int numberOfWheels = 4;
+public class Car extends RoadVehicle implements Refuelable {
+  //cars are a type of road vehicle and is refuelable
   boolean locked = true;
 
   public void unlock() {

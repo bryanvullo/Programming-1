@@ -1,6 +1,7 @@
 package lab8part3;
 
 public class JetPlane extends Transport implements Refuelable {
+  // jet planes are a type of transport and are refuelable
   String location;
   public void takeOff() {
     //transitions from land to air

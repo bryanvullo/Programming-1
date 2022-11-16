@@ -1,6 +1,7 @@
 package lab8part3;
 
-abstract class Cycle extends RoadVehicle{
+abstract class Cycle extends RoadVehicle {
+  //cycles are a type of road vehicle
   public void load() {
     System.out.println("sit on the cycle");
   }

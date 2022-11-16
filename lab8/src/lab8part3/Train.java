@@ -1,6 +1,7 @@
 package lab8part3;
 
 public class Train extends Transport implements Refuelable {
+  //trains are a type of transport and are refuelable
   public void location() {
     System.out.println("this vehicle can only operate on train tracks");
   }

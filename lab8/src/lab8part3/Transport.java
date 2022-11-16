@@ -1,6 +1,8 @@
 package lab8part3;
 
 abstract class Transport {
+  //an abstract class as a type of transport is an object
+
   // all transportation carry some sort of cargo or passengers
   public abstract void load();
 
