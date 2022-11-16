@@ -15,7 +15,7 @@ Piano, loud, {C4, C4, D4, none, C4, none, F4, none, E4, none, none, none}
 Violin, soft, {C4, C4, D4, none, C4, none, F4, none, E4, none, none, none}
 Violin, soft, {C4, C4, D4, none, C4, none, F4, none, E4, none, none, none}
 Cello, soft, {C4, C4, D4, none, C4, none, F4, none, E4, none, none, none}
- Violin, soft, {C4, C4, D4, none, C4, none, F4, none, E4, none, none, none}
+Violin, soft, {C4, C4, D4, none, C4, none, F4, none, E4, none, none, none}
 Cello, loud, {C4, C4, D4, none, C4, none, F4, none, E4, none, none, none}
 Piano, loud, {C4, C4, D4, none, C4, none, F4, none, E4, none, none, none}
 Name: Simple
