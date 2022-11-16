@@ -1,6 +1,7 @@
 package lab9part3;
 
 public class FlashCard {
+
   String question;
   String answer;
 

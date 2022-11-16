@@ -3,6 +3,7 @@ package lab9part2;
 import java.util.ArrayList;
 
 public class Quiz {
+
   FlashCardReader myReader;
   ArrayList<FlashCard> myFlashCards = new ArrayList<FlashCard>();
   Toolbox myToolBox = new Toolbox();

@@ -5,6 +5,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 
 public class Quiz {
+
   FlashCardReader myReader;
   ArrayList<FlashCard> myFlashCards = new ArrayList<FlashCard>();
   Toolbox myToolBox = new Toolbox();
@@ -18,7 +19,8 @@ public class Quiz {
   }
 
   public void play() {
-    System.out.println("Would you like to save your results? [Y/N]"); //asks user if they would like to save their result
+    System.out.println(
+        "Would you like to save your results? [Y/N]"); //asks user if they would like to save their result
     String saveResults = myToolBox.readStringFromCmd();
     while (!(saveResults.equals("Y") || saveResults.equals("N"))) { //validates answer
       System.out.println("Would you like to save your results? [Y/N]");
@@ -31,19 +33,22 @@ public class Quiz {
       String answer = myToolBox.readStringFromCmd(); //takes answe
       if (answer.equals(flashCard.getAnswer())) { //compares answers
         System.out.println("right");
-        results.add(flashCard.getQuestion() + "," + answer + ",right"); //adds the result to the results array
+        results.add(flashCard.getQuestion() + "," + answer
+            + ",right"); //adds the result to the results array
         correctCounter += 1; //increments counter for correct questions
-      }
-      else {
+      } else {
         System.out.println("wrong");
         System.out.println("the correct answer is: " + flashCard.getAnswer());
-        results.add(flashCard.getQuestion() + "," + answer + ",wrong"); //adds the result to the results array
+        results.add(flashCard.getQuestion() + "," + answer
+            + ",wrong"); //adds the result to the results array
       }
       questionCounter += 1; //increments counter for total questions
     }
     if (saveResults.equals("Y")) { //if user chose to save their results, then call save method
-      float percentage = (float) correctCounter / questionCounter * 100; //calculates percentage of correct questions
-      results.add(correctCounter + "," + questionCounter + "," + percentage); //adds the final score to the array
+      float percentage = (float) correctCounter / questionCounter
+          * 100; //calculates percentage of correct questions
+      results.add(correctCounter + "," + questionCounter + ","
+          + percentage); //adds the final score to the array
       save();
     }
   }
@@ -55,8 +60,7 @@ public class Quiz {
       for (String result : results) {
         printStream.println(result);
       }
-    }
-    catch (FileNotFoundException e) {
+    } catch (FileNotFoundException e) {
       System.err.println(e + ": file not found");
     }
   }

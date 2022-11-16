@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class FlashCardReader {
+
   BufferedReader reader;
   ArrayList<FlashCard> flashCards = new ArrayList<FlashCard>();
 

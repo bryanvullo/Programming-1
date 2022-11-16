@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class FlashCardReader {
+
   BufferedReader reader;
 
   public FlashCardReader(String file) {
