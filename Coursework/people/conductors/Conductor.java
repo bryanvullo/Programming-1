@@ -52,7 +52,8 @@ public class Conductor extends Person {
               System.err.println("There's no space for " + musician.getName());
               break;
             case 2:
-              System.out.println("Musician " + musician.getName() + " is already sat down");
+              //musician is already sat down
+              //not printing anything to remove terminal clutter as this is the most frequent case
               break;
             default:
               System.err.println("There's no space for " + musician.getName());
