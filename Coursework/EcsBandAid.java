@@ -96,14 +96,14 @@ public class EcsBandAid {
   }
 
   public static void main(String[] args) {
-    String musiciansFilename = args[0];
-    String compositionsFilename = args[1];
-    int years = Integer.parseInt(args[2]);
+//    String musiciansFilename = args[0];
+//    String compositionsFilename = args[1];
+//    int years = Integer.parseInt(args[2]);
 
     //testing/debugging purposes
-//    String musiciansFilename =  "musicians.txt";
-//    String compositionsFilename =  "compositions.txt";
-//    int years = 3;
+    String musiciansFilename =  "musicians.txt";
+    String compositionsFilename =  "compositions.txt";
+    int years = 3;
 
     Scanner musicianReader;
     Scanner compositionReader;

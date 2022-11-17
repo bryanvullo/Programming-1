@@ -33,6 +33,30 @@ public class MusicSheet implements Composition {
 
   private int convertNote(String note) {
     switch (note) {
+      case "C7":
+        return 96;
+      case "B6":
+        return 95;
+      case "A#6": case "Bb6":
+        return 94;
+      case "A6":
+        return 93;
+      case "G#6": case "Ab6":
+        return 92;
+      case "G6":
+        return 91;
+      case "F#6": case "Gb6":
+        return 90;
+      case "F6":
+        return 89;
+      case "E6":
+        return 88;
+      case "D#6": case "Eb6":
+        return 87;
+      case "D6":
+        return 86;
+      case "C#6": case "Db6":
+        return 85;
       case "C6":
         return 84;
       case "B5":
@@ -107,7 +131,22 @@ public class MusicSheet implements Composition {
         return 49;
       case "C3":
         return 48;
+      case "A2":
+        return 45;
+      case "G2":
+        return 43;
+      case "G#2":
+        return 44;
+      case "C2":
+        return 36;
+      case "F2":
+        return 41;
+      case "C#2":
+        return 37;
+      case "none":
+        return 0;
       default: //handles incorrect input to 0
+        System.out.println(note);
         return 0;
     }
   }
