@@ -134,7 +134,6 @@ public class Helper {
         notesString = notesString.replaceAll("}", ""); //remove }
         notes = notesString.split(", "); //each individual note in an array
 
-
         currentComposition.addScore(instrumentName, Arrays.asList(notes), soft);
       }
     }
