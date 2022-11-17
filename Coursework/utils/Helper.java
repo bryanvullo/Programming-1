@@ -38,7 +38,7 @@ public class Helper {
     return mySoundSystem;
   }
 
-  public static ArrayList<Musician> createMusicanArrayList(SoundSystem mySoundSystem, Scanner musicianReader) {
+  public static ArrayList<Musician> createMusicianArrayList(SoundSystem mySoundSystem, Scanner musicianReader) {
     ArrayList<Musician> myMusicians = new ArrayList<Musician>();
 
     while (musicianReader.hasNextLine()) {
@@ -54,7 +54,8 @@ public class Helper {
         musician = new Violinist(words[0], mySoundSystem);
       } else {
         System.err.println("we only accept piano, cello and violin musicians, given " + words[1]);
-        System.exit(0); //quits the program
+        System.err.println("defaulted to piano"); //handled 'gracefully'
+        musician = new Pianist(words[0], mySoundSystem);
       }
       myMusicians.add(musician);
     }

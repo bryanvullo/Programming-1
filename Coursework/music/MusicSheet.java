@@ -107,7 +107,7 @@ public class MusicSheet implements Composition {
         return 49;
       case "C3":
         return 48;
-      default:
+      default: //handles incorrect input to 0
         return 0;
     }
   }
@@ -129,20 +129,20 @@ public class MusicSheet implements Composition {
   public int getNoteLength() {
     switch (getTempo()) {
       case "Larghissimo":
-        return 1500;
-      case "Lento":
-        return 1000;
-      case "Andante":
         return 500;
+      case "Lento":
+        return 350;
+      case "Andante":
+        return 250;
       case "Moderato":
-        return 300;
-      case "Allegro":
         return 175;
+      case "Allegro":
+        return 125;
       case "Presto":
-        return 150;
+        return 75;
       default:
         System.err.println("Tempo not specified: Defaulted to Allegro");
-        return 175;
+        return 125;
     }
   }
 }

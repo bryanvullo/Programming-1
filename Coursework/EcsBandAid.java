@@ -31,7 +31,7 @@ public class EcsBandAid {
   }
 
   public void performForAYear() {
-    //TODO 1) randomly choose 3 compositions
+      //randomly choose 3 compositions
     ArrayList<Composition> compositionsToPlay = new ArrayList<Composition>();
     for (int i = 0; i < 3; i++) {
       Collections.shuffle(compositions); //shuffles the compositions ArrayList
@@ -46,7 +46,7 @@ public class EcsBandAid {
     }
     System.out.println("");
 
-    //TODO 2) invite musicians
+      //invite musicians
     //I will implement that 70% of each musician will accept the invite
     //ordered randomly, with first come first served basis
     Collections.shuffle(musicians); //shuffles the musicians ArrayList so it's random
@@ -65,7 +65,7 @@ public class EcsBandAid {
     }
     System.out.println("");
 
-    //TODO 3) perform the composition
+      //perform the composition
     for (Composition composition : compositionsToPlay) {
       System.out.println("Now playing " + composition.getName());
       bandConductor.playComposition(composition);
@@ -76,7 +76,8 @@ public class EcsBandAid {
         throw new RuntimeException(e);
       }
     }
-    //TODO 4) each musician IN the band leaves with chance of 50%
+
+      // each musician IN the band leaves with chance of 50%
     ArrayList<Musician> musiciansToRemove = new ArrayList<Musician>();
     for (Musician musician : bandConductor.getMusicians()) { //each musician which is registered
       float random = (float) Math.random(); //random number from 0 to 1
@@ -95,14 +96,14 @@ public class EcsBandAid {
   }
 
   public static void main(String[] args) {
-//    String musiciansFilename = args[0];
-//    String compositionsFilename = args[1];
-//    int years = Integer.parseInt(args[2]);
+    String musiciansFilename = args[0];
+    String compositionsFilename = args[1];
+    int years = Integer.parseInt(args[2]);
 
     //testing/debugging purposes
-    String musiciansFilename =  "musicians.txt";
-    String compositionsFilename =  "compositions.txt";
-    int years = 3;
+//    String musiciansFilename =  "musicians.txt";
+//    String compositionsFilename =  "compositions.txt";
+//    int years = 3;
 
     Scanner musicianReader;
     Scanner compositionReader;
@@ -119,7 +120,7 @@ public class EcsBandAid {
     compositionReader = Helper.createReader(compositionsFilename);
 
     //create the musicians collection
-    myMusicians = Helper.createMusicanArrayList(mySoundSystem, musicianReader);
+    myMusicians = Helper.createMusicianArrayList(mySoundSystem, musicianReader);
 
     //create the compositions collection
     myCompositions = Helper.createCompositionArrayList(compositionReader);

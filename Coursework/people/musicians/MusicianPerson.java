@@ -62,7 +62,6 @@ public abstract class MusicianPerson extends Person implements Musician {
 
   public void clearScore() {
     notes.clear();
-    nextNote = null;
   }
 
   public boolean hasScore() {
