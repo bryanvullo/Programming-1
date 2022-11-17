@@ -85,12 +85,14 @@ public class Helper {
 
       } else if (tempoPattern.matcher(line).find()) {
         //tempo
-        String[] words = line.split(": ");
+        line = line.replaceAll(" ", "");
+        String[] words = line.split(":");
         tempo = words[1];
 
       } else if (lengthPattern.matcher(line).find()) {
         //length
-        String[] words = line.split(": ");
+        line = line.replaceAll(" ", "");
+        String[] words = line.split(":");
         length = Integer.parseInt(words[1]);
 
         //end of new composition so create the new object
@@ -103,7 +105,8 @@ public class Helper {
         boolean soft = true; //true is a placeholder for now
         String[] notes;
 
-        String[] words = line.split(", ", 3);
+        line = line.replaceAll(" ", "");
+        String[] words = line.split(",", 3);
         switch (words[0]) { //validates input of instrument
           case "Piano":
             break;
@@ -112,8 +115,9 @@ public class Helper {
           case "Violin":
             break;
           default:
-            System.err.println("we only accept piano, cello and violin musicians, given " + words[0] + name);
-            System.exit(0); //quits the program
+            System.err.println("we only accept piano, cello and violin musicians, given " + words[0]);
+            System.err.println("defaulted to Piano");
+            words[0] = "Piano"; //dealing with it "gracefully"
         }
         instrumentName = words[0];
 
@@ -126,13 +130,15 @@ public class Helper {
             break;
           default:
             System.err.println("we only accept soft or loud loudness, given " + words[1]);
-            System.exit(0); //quits the program
+            System.err.println("defaulted to soft");
+            soft = true; //dealing with it "gracefully"
         }
 
         String notesString = words[2]; //the list of notes
         notesString = notesString.replaceAll("\\{", ""); //remove {
         notesString = notesString.replaceAll("}", ""); //remove }
-        notes = notesString.split(", "); //each individual note in an array
+        notesString = notesString.replaceAll(" ", ""); // removes whitespace
+        notes = notesString.split(","); //each individual note in an array
 
         currentComposition.addScore(instrumentName, Arrays.asList(notes), soft);
       }

@@ -49,7 +49,6 @@ public abstract class MusicianPerson extends Person implements Musician {
   }
 
   public void readScore(int[] notes, boolean soft) {
-    this.notes.clear();
     for (int note : notes) { //reads the notes into the list
       this.notes.add(note);
     }
@@ -58,6 +57,19 @@ public abstract class MusicianPerson extends Person implements Musician {
       loudness = SOFT;
     } else {
       loudness = LOUD;
+    }
+  }
+
+  public void clearScore() {
+    notes.clear();
+    nextNote = null;
+  }
+
+  public boolean hasScore() {
+    if (notes.size() == 0) {
+      return false;
+    } else {
+      return true;
     }
   }
 

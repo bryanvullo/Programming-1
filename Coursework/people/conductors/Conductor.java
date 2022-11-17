@@ -37,27 +37,35 @@ public class Conductor extends Person {
   }
 
   public void playComposition(Composition composition) {
+    //assign scores
     MusicScore[] scores = composition.getScores();
     for (MusicScore score : scores) { // loops through all the scores for each instrument
       for (Musician musician: musicians) { //loops through each musician assigned to the conductor
         if (score.getInstrumentID() == musician.getInstrumentID()) {
-          //if the score is for the instrument that the musician in playing
-          musician.readScore(score.getNotes(), score.isSoft());
-          int result = orchestra.sitDown(musician);
-          switch (result) {
-            case 0:
-              System.out.println("Musician " + musician.getName() + " has sat down");
-              break;
-            case 1:
-              System.err.println("There's no space for " + musician.getName());
-              break;
-            case 2:
-              //musician is already sat down
-              //not printing anything to remove terminal clutter as this is the most frequent case
-              break;
-            default:
-              System.err.println("There's no space for " + musician.getName());
-          } //prints out the result of the sitDown method
+          //if already assigned a score
+          if (musician.hasScore()){ //this ensures that scores of the same instrument
+              //can be assigned to different musicians of that type
+            //do nothing
+          } else {
+            //if the score is for the instrument that the musician in playing
+            //and musician doesn't have a score
+            musician.readScore(score.getNotes(), score.isSoft());
+            int result = orchestra.sitDown(musician);
+            switch (result) {
+              case 0:
+                System.out.println("Musician " + musician.getName() + " has sat down");
+                break;
+              case 1:
+                System.err.println("There's no space for " + musician.getName());
+                break;
+              case 2:
+                //musician is already sat down
+                //not printing anything to remove terminal clutter as this is the most frequent case
+                break;
+              default:
+                System.err.println("There's no space for " + musician.getName());
+            } //prints out the result of the sitDown method
+          }
         }
       }
     } //all the musicians are now assigned their scores
@@ -69,6 +77,14 @@ public class Conductor extends Person {
       }
       catch (InterruptedException e) {
         System.err.println(e);
+      }
+    }
+    //composition has ended
+    //each musician stands up and clears their score
+    for (Musician musician : musicians) {
+      musician.clearScore();
+      if (orchestra.isSeated(musician)) {
+        orchestra.standUp(musician);
       }
     }
     //composition has ended so stop the music

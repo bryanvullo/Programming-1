@@ -11,4 +11,8 @@ public interface Musician {
   public abstract int getInstrumentID();
 
   public abstract String getName();
+
+  public abstract void clearScore();
+
+  public abstract boolean hasScore();
 }
