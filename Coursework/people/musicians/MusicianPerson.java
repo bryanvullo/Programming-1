@@ -6,28 +6,40 @@ import java.util.List;
 import people.Person;
 import utils.SoundSystem;
 
-public class Cellist extends Person implements Musician {
-
-  private final String instrument = "Cello";
-  private final int instrumentID = 43;
-  private final int SOFT = 50;
-  private final int LOUD = 100;
+public abstract class MusicianPerson extends Person implements Musician {
+  private String instrument;
+  private int instrumentID;
+  private int SOFT;
+  private int LOUD;
   private int loudness;
   private List<Integer> notes = new ArrayList<Integer>();
   private Iterator<Integer> nextNote;
   private int seat;
   private SoundSystem soundSystem;
 
-  public Cellist(String name, SoundSystem soundSystem, int seat) {
-    super(name); //sets name
-    this.soundSystem = soundSystem; //sets sound system
-    setSeat(seat); //sets seat
+  public MusicianPerson(String name, SoundSystem soundSystem, int seat,
+      String instrument, int instrumentID, int SOFT, int LOUD) {
+    super(name);
+    this.soundSystem = soundSystem;
+    setSeat(seat);
+
+    this.instrument = instrument;
+    this.instrumentID = instrumentID;
+    this.SOFT = SOFT;
+    this.LOUD = LOUD;
   }
 
-  public Cellist(String name, SoundSystem soundSystem) {
-    super(name); //sets name
-    this.soundSystem = soundSystem; //sets sound system
+  public MusicianPerson(String name, SoundSystem soundSystem,
+      String instrument, int instrumentID, int SOFT, int LOUD) {
+    super(name);
+    this.soundSystem = soundSystem;
+
+    this.instrument = instrument;
+    this.instrumentID = instrumentID;
+    this.SOFT = SOFT;
+    this.LOUD = LOUD;
   }
+
   public void setSeat(int seat) {
     this.seat = seat; //sets seat to given seat
     soundSystem.setInstrument(this.seat, instrumentID);
@@ -48,7 +60,7 @@ public class Cellist extends Person implements Musician {
   }
 
   public void playNextNote() {
-    if (nextNote.hasNext()) { //checks to see if there is a note to be played
+    if (nextNote.hasNext()) { //checks if there is a note to be played
       int note = nextNote.next(); //gets the next note
       soundSystem.playNote(seat, note, loudness); //plays the note
     }

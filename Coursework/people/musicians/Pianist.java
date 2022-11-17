@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Pianist extends Person implements Musician {
 
-  private String instrument = "Piano";
+  private final String instrument = "Piano";
   private final int instrumentID = 1;
   private final int SOFT = 75;
   private final int LOUD = 150;

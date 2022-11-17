@@ -9,13 +9,13 @@ import java.util.List;
 
 public class Violinist extends Person implements Musician {
 
-  private String instrument = "Violin";
+  private final String instrument = "Violin";
   private int instrumentID = 41;
   private final int SOFT = 50;
   private final int LOUD = 100;
   private int loudness;
   private List<Integer> notes = new ArrayList<Integer>();
-  public Iterator<Integer> nextNote;
+  private Iterator<Integer> nextNote;
   private int seat;
   private SoundSystem soundSystem;
 

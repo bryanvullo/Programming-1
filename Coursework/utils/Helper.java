@@ -112,7 +112,7 @@ public class Helper {
           case "Violin":
             break;
           default:
-            System.err.println("we only accept piano, cello and violin musicians, given " + words[0]);
+            System.err.println("we only accept piano, cello and violin musicians, given " + words[0] + name);
             System.exit(0); //quits the program
         }
         instrumentName = words[0];
@@ -133,6 +133,7 @@ public class Helper {
         notesString = notesString.replaceAll("\\{", ""); //remove {
         notesString = notesString.replaceAll("}", ""); //remove }
         notes = notesString.split(", "); //each individual note in an array
+
 
         currentComposition.addScore(instrumentName, Arrays.asList(notes), soft);
       }
