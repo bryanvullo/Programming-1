@@ -23,6 +23,7 @@ public abstract class MusicianPerson extends Person implements Musician {
     this.soundSystem = soundSystem;
     setSeat(seat);
 
+    //unique data for each type of musician
     this.instrument = instrument;
     this.instrumentID = instrumentID;
     this.SOFT = SOFT;
@@ -34,6 +35,7 @@ public abstract class MusicianPerson extends Person implements Musician {
     super(name);
     this.soundSystem = soundSystem;
 
+    //unique data for each type of musician
     this.instrument = instrument;
     this.instrumentID = instrumentID;
     this.SOFT = SOFT;
