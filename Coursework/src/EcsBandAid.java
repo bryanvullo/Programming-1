@@ -58,10 +58,27 @@ public class EcsBandAid {
     System.out.println("");
 
       //perform the composition
+    Scanner inputReader = new Scanner(System.in); //allows me to get input from command
     for (Composition composition : compositionsToPlay) {
       System.out.println("Now playing " + composition.getName());
       bandConductor.playComposition(composition);
       System.out.println("");
+      System.out.print("enter 'P' to pause: ");
+      String input = inputReader.nextLine();
+      while (input.equals("P")) {
+        //is paused
+        System.out.print("enter 'R' to resume or 'S' to save: ");
+        input = inputReader.nextLine();
+        if (input.equals("R")) {
+          //this breaks the loop and resumes
+        } else if (input.equals("S")) {
+          //TODO save
+          System.out.println("the current information has been saved");
+          System.exit(0);
+        } else {
+          input = "P";
+        }
+      }
       try { // 2-second delay between compositions
         Thread.sleep(2000);
       } catch (InterruptedException e) {
