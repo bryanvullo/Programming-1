@@ -1,18 +1,9 @@
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.Random;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 import music.Composition;
-import music.MusicSheet;
 import people.conductors.Conductor;
-import people.musicians.Cellist;
 import people.musicians.Musician;
-import people.musicians.Pianist;
-import people.musicians.Violinist;
 import utils.Helper;
 import utils.SoundSystem;
 
@@ -31,6 +22,7 @@ public class EcsBandAid {
   }
 
   public void performForAYear() {
+    //plays 3 compositions a year
       //randomly choose 3 compositions
     ArrayList<Composition> compositionsToPlay = new ArrayList<Composition>();
     for (int i = 0; i < 3; i++) {
@@ -130,6 +122,7 @@ public class EcsBandAid {
     EcsBandAid myBand = new EcsBandAid(mySoundSystem, myMusicians, myCompositions);
     for (int i = 0; i < years; i++) {
       myBand.performForAYear();
+      System.out.println("The band has played for " + years + " years!");
     }
   }
 }
