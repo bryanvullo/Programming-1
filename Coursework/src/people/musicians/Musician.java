@@ -2,17 +2,19 @@ package people.musicians;
 
 public interface Musician {
 
-  public abstract void setSeat(int seat);
+  void setSeat(int seat);
 
-  public abstract void readScore(int[] notes, boolean soft);
+  void readScore(int[] notes, boolean soft);
 
-  public abstract void playNextNote();
+  void playNextNote();
 
-  public abstract int getInstrumentID();
+  int getInstrumentID();
 
-  public abstract String getName();
+  String getInstrument();
 
-  public abstract void clearScore();
+  String getName();
 
-  public abstract boolean hasScore();
+  void clearScore();
+
+  boolean hasScore();
 }

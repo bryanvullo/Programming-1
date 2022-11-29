@@ -82,4 +82,8 @@ public abstract class MusicianPerson extends Person implements Musician {
   public int getInstrumentID() {
     return instrumentID;
   }
+
+  public String getInstrument() {
+    return instrument;
+  }
 }

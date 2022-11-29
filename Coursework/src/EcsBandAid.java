@@ -9,8 +9,8 @@ import utils.SoundSystem;
 
 public class EcsBandAid {
   private SoundSystem soundSystem;
-  private ArrayList<Musician> musicians = new ArrayList<Musician>();
-  private ArrayList<Composition> compositions = new ArrayList<Composition>();
+  private ArrayList<Musician> musicians;
+  private ArrayList<Composition> compositions;
   private Conductor bandConductor;
 
   public EcsBandAid(SoundSystem soundSystem, ArrayList<Musician> musicians,
@@ -18,10 +18,23 @@ public class EcsBandAid {
     this.soundSystem = soundSystem;
     this.musicians = musicians;
     this.compositions = compositions;
-    bandConductor = new Conductor("Bryan", soundSystem);
+    bandConductor = new Conductor("Bryan", this.soundSystem);
   }
 
-  public void performForAYear() {
+  public ArrayList<Musician> getMusicians() {
+    return musicians;
+  }
+
+  public ArrayList<Composition> getCompositions() {
+    return compositions;
+  }
+
+  public Conductor getBandConductor() {
+    return bandConductor;
+  }
+
+  public void performForAYear(int currentYear, int years) {
+    //TODO check if adding parameters is allowed
     //plays 3 compositions a year
       //randomly choose 3 compositions
     ArrayList<Composition> compositionsToPlay = new ArrayList<Composition>();
@@ -59,10 +72,12 @@ public class EcsBandAid {
 
       //perform the composition
     Scanner inputReader = new Scanner(System.in); //allows me to get input from command
-    for (Composition composition : compositionsToPlay) {
+    for (int i = 0; i < 3; i++) {
+      Composition composition = compositionsToPlay.get(i);
       System.out.println("Now playing " + composition.getName());
       bandConductor.playComposition(composition);
       System.out.println("");
+      //music player options - pausing, resuming and saving
       System.out.print("enter 'P' to pause: ");
       String input = inputReader.nextLine();
       while (input.equals("P")) {
@@ -72,7 +87,7 @@ public class EcsBandAid {
         if (input.equals("R")) {
           //this breaks the loop and resumes
         } else if (input.equals("S")) {
-          //TODO save
+          Json.saveTheYear(compositionsToPlay, i, this, currentYear, years);
           System.out.println("the current information has been saved");
           System.exit(0);
         } else {
@@ -109,6 +124,8 @@ public class EcsBandAid {
 //    String compositionsFilename = args[1];
 //    int years = Integer.parseInt(args[2]);
 
+    //TODO implement reloading saved simulations
+
     //testing/debugging purposes
     String musiciansFilename =  "musicians.txt";
     String compositionsFilename =  "compositions.txt";
@@ -138,7 +155,7 @@ public class EcsBandAid {
     // the SoundSystem, the musician collection, and the composition collection
     EcsBandAid myBand = new EcsBandAid(mySoundSystem, myMusicians, myCompositions);
     for (int i = 0; i < years; i++) {
-      myBand.performForAYear();
+      myBand.performForAYear(i, years);
       System.out.println("The band has played for " + years + " years!");
     }
   }

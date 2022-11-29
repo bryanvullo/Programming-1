@@ -32,6 +32,10 @@ public class MusicScore {
     return instrumentID;
   }
 
+  public String getInstrumentName() {
+    return instrumentName;
+  }
+
   public int[] getNotes() {
     return notes;
   }

@@ -13,4 +13,6 @@ public interface Composition {
   int getLength(); //how many notes to be played
 
   int getNoteLength(); //how long the note is in ms
+
+  String getTempo();
 }

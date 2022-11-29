@@ -161,7 +161,7 @@ public class MusicSheet implements Composition {
     return length;
   }
 
-  private String getTempo() {
+  public String getTempo() {
     return tempo;
   }
 

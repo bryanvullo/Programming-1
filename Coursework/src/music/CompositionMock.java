@@ -1,6 +1,5 @@
 package music;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,5 +43,9 @@ public class CompositionMock implements Composition {
 
   public int getNoteLength() {
     return 175;
+  }
+
+  public String getTempo() {
+    return getTempo();
   }
 }
