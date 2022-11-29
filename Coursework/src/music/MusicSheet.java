@@ -31,6 +31,10 @@ public class MusicSheet implements Composition {
     scores.add(musicScore);
   }
 
+  public void addScore(MusicScore score) {
+    scores.add(score);
+  }
+
   private int convertNote(String note) {
     switch (note) {
       case "C7":

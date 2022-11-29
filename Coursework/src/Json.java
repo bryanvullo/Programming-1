@@ -2,16 +2,24 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import music.Composition;
 import music.MusicScore;
+import music.MusicSheet;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import people.musicians.Cellist;
 import people.musicians.Musician;
+import people.musicians.Pianist;
+import people.musicians.Violinist;
+import utils.Helper;
+import utils.SoundSystem;
 
 public class Json {
+    //saving methods
   private static Map parseCompositionToJson(Composition composition) {
     //name, tempo and length of the composition
     Map compositionMap = new LinkedHashMap();
@@ -124,7 +132,114 @@ public class Json {
     }
   }
 
-  public static void resumeTheYear() {
+    //reloading methods
+  public static ArrayList<Musician> parseJsonToMusician(Iterator iterator, SoundSystem soundSystem) {
+    //fetches musicians' data
+    //layout: json array of maps | each map is a musicians data
+    ArrayList<Musician> musicians = new ArrayList<>();
+    while (iterator.hasNext()) { //whilst there is a map (musician) in the JSON array
+      String name = null;
+      String instrument = null;
+      Map musicianMap = (Map) iterator.next();
+      Iterator<Map.Entry> musicianIterator = musicianMap.entrySet().iterator();
+      while (musicianIterator.hasNext()) {
+        //assigns the musicians data to vairables
+        Map.Entry musicianPair = musicianIterator.next();
+        if (musicianPair.getKey().equals("name")) {
+          name = (String) musicianPair.getValue();
+        } else if (musicianPair.getKey().equals("instrument")) {
+          instrument = (String) musicianPair.getValue();
+        } else {
+          System.err.println("unrecognised musician data in save file");
+        }
+      }
+      //creates the corresponding musicians object
+      if (instrument.equals("Violin")) {
+        Violinist musician = new Violinist(name, soundSystem);
+        musicians.add(musician);
+      } else if (instrument.equals("Cello")) {
+        Cellist musician = new Cellist(name, soundSystem);
+        musicians.add(musician);
+      } else if (instrument.equals("Piano")) {
+        Pianist musician = new Pianist(name, soundSystem);
+        musicians.add(musician);
+      } else {
+        System.err.println("unrecognised instrument data in save file");
+      }
+    }
+    return musicians;
+  }
+
+  public static ArrayList<Composition> parseJsonToCompositions(Iterator iterator) {
+    //fetches compositions' data
+    //layout: json array of maps | each map is a composition
+    ArrayList<Composition> compositions = new ArrayList<>();
+    while (iterator.hasNext()) { //whilst there is a Map (composition) in the JSON array
+      MusicSheet composition;
+      String name = null;
+      String tempo = null;
+      int length = 0;
+      ArrayList<MusicScore> scores = new ArrayList<>();
+      //gets the map of the composition
+      Map compositionMap = (Map) iterator.next();
+      Iterator<Map.Entry> compositionIterator = compositionMap.entrySet().iterator();
+      while (compositionIterator.hasNext()) {
+        //fetches all the data in the Map and stores it in variables
+        Map.Entry compositionPair = compositionIterator.next();
+        if (compositionPair.getKey().equals("name")) {
+          name = (String) compositionPair.getValue();
+        } else if (compositionPair.getKey().equals("tempo")) {
+          tempo = (String) compositionPair.getValue();
+        } else if (compositionPair.getKey().equals("length")) {
+          length = (int) ((long)compositionPair.getValue());
+        } else if (compositionPair.getKey().equals("scores")) {
+          //scores are saved in a separate JSON array | each Map in the array is a score
+          JSONArray scoresArray = (JSONArray) compositionPair.getValue();
+          Iterator scoresIterator = scoresArray.iterator();
+          while (scoresIterator.hasNext()) { //whilst there is a Map (score) in the array of scores
+            String instrument = null;
+            boolean soft = true;
+            int[] notes = null;
+            Map scoreMap = (Map) scoresIterator.next();
+            Iterator<Map.Entry> scoreIterator = scoreMap.entrySet().iterator();
+            while (scoreIterator.hasNext()) {
+              //fetched all the data in the map and stores it in variables
+              Map.Entry scorePair = scoreIterator.next();
+              if (scorePair.getKey().equals("instrument")) {
+                instrument = (String) scorePair.getValue();
+              } else if (scorePair.getKey().equals("soft")) {
+                soft = (boolean) scorePair.getValue();
+              } else if (scorePair.getKey().equals("notes")) {
+                String notesString = (String) scorePair.getValue();
+                String[] notesArray = notesString.split(",");
+                //converts String array into int array
+                notes = new int[notesArray.length];
+                for (int i = 0; i < notesArray.length; i++) {
+                  notes[i] = Integer.parseInt(notesArray[i]);
+                }
+              } else {
+                System.err.println("unrecognised score data in save file");
+              }
+            }
+            //creates the score object and stores it in the array list scores
+            MusicScore score = new MusicScore(instrument, notes, soft);
+            scores.add(score);
+          }
+        } else {
+          System.err.println("unrecognised composition data in save file");
+        }
+      }
+      //creates the composition object, adds the scores
+      composition = new MusicSheet(name, tempo, length);
+      for (MusicScore score : scores) {
+        composition.addScore(score);
+      }
+      compositions.add(composition);
+      //next composition
+    }
+    return compositions;
+  }
+  public static EcsBandAid reloadTheYear() {
     JSONParser myParser = new JSONParser();
     Object myObject = null;
     try {
@@ -136,17 +251,39 @@ public class Json {
     }
     JSONObject json = (JSONObject) myObject;
 
-    int currentYear = (int) json.get("year");
-    int totalYears = (int) json.get("totalYears");
+    int currentYear = (int) ((long) json.get("year"));
+    int totalYears = (int) ((long)json.get("totalYears"));
+    int remainingYears = totalYears - currentYear;
 
-    //TODO fetch all the data and create the objects
-    JSONArray compositionsToPlay = (JSONArray) json.get("compositionsToPlay");
+    //sound system to pass to musicians
+    SoundSystem soundSystem = Helper.createSoundSystem();
 
-    JSONArray registeredMusicians = (JSONArray) json.get("registeredMusicians");
+    //creates an array list of the compositions to play
+    JSONArray compositionsToPlayJson = (JSONArray) json.get("compositionsToPlay");
+    Iterator compositionsToPlayIterator = compositionsToPlayJson.iterator();
+    ArrayList<Composition> compositionsToPlay = parseJsonToCompositions(compositionsToPlayIterator);
 
-    JSONArray allCompositions = (JSONArray) json.get("allCompositions");
+    //creates an array list of registered musicians
+    JSONArray registeredMusiciansJson = (JSONArray) json.get("registeredMusicians");
+    Iterator registeredMusiciansIterator = registeredMusiciansJson.iterator();
+    ArrayList<Musician> registeredMusicians = parseJsonToMusician(registeredMusiciansIterator, soundSystem);
 
-    JSONArray allMusicians = (JSONArray) json.get("allMusicians");
+    //creates an array list of all the compositions
+    JSONArray allCompositionsJson = (JSONArray) json.get("allCompositions");
+    Iterator allCompositionsIterator = allCompositionsJson.iterator();
+    ArrayList<Composition> allCompositions = parseJsonToCompositions(allCompositionsIterator);
 
+    //creates an array of all musicians
+    JSONArray allMusiciansJson = (JSONArray) json.get("allMusicians");
+    Iterator allMusiciansIterator = allMusiciansJson.iterator();
+    ArrayList<Musician> allMusicians = parseJsonToMusician(allMusiciansIterator, soundSystem);
+
+    //returns an EcsBandAid object
+    EcsBandAid myBand = new EcsBandAid(soundSystem, allMusicians, allCompositions);
+    myBand.registerMusicians(registeredMusicians);
+    myBand.setCompositionsToPlay(compositionsToPlay);
+    myBand.setYears(remainingYears);
+
+    return myBand;
   }
 }

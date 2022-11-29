@@ -1,3 +1,4 @@
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -11,7 +12,10 @@ public class EcsBandAid {
   private SoundSystem soundSystem;
   private ArrayList<Musician> musicians;
   private ArrayList<Composition> compositions;
+  private ArrayList<Composition> compositionsToPlay;
   private Conductor bandConductor;
+  private int years;
+  private int currentYear;
 
   public EcsBandAid(SoundSystem soundSystem, ArrayList<Musician> musicians,
       ArrayList<Composition> compositions) {
@@ -33,11 +37,39 @@ public class EcsBandAid {
     return bandConductor;
   }
 
-  public void performForAYear(int currentYear, int years) {
-    //TODO check if adding parameters is allowed
+  public void setYears(int years) {
+    this.years = years;
+  }
+
+  public void setCompositionsToPlay(ArrayList<Composition> compositionsToPlay) {
+    this.compositionsToPlay = compositionsToPlay;
+  }
+
+  public void musicPlayer(int currentCompositionIndex) {
+    //music player options - pausing, resuming and saving
+    Scanner inputReader = new Scanner(System.in); //allows me to get input from command
+    System.out.print("enter 'P' to pause: ");
+    String input = inputReader.nextLine();
+    while (input.equals("P")) {
+      //is paused
+      System.out.print("enter 'R' to resume or 'S' to save: ");
+      input = inputReader.nextLine();
+      if (input.equals("R")) {
+        //this breaks the loop and resumes
+      } else if (input.equals("S")) {
+        Json.saveTheYear(compositionsToPlay, currentCompositionIndex, this, currentYear, years);
+        System.out.println("the current information has been saved");
+        System.exit(0);
+      } else {
+        input = "P";
+      }
+    }
+  }
+
+  public void performForAYear() {
     //plays 3 compositions a year
       //randomly choose 3 compositions
-    ArrayList<Composition> compositionsToPlay = new ArrayList<Composition>();
+    compositionsToPlay.clear();
     for (int i = 0; i < 3; i++) {
       Collections.shuffle(compositions); //shuffles the compositions ArrayList
       Composition composition = compositions.get(0); //gets the first random element
@@ -71,29 +103,12 @@ public class EcsBandAid {
     System.out.println("");
 
       //perform the composition
-    Scanner inputReader = new Scanner(System.in); //allows me to get input from command
     for (int i = 0; i < 3; i++) {
       Composition composition = compositionsToPlay.get(i);
       System.out.println("Now playing " + composition.getName());
       bandConductor.playComposition(composition);
       System.out.println("");
-      //music player options - pausing, resuming and saving
-      System.out.print("enter 'P' to pause: ");
-      String input = inputReader.nextLine();
-      while (input.equals("P")) {
-        //is paused
-        System.out.print("enter 'R' to resume or 'S' to save: ");
-        input = inputReader.nextLine();
-        if (input.equals("R")) {
-          //this breaks the loop and resumes
-        } else if (input.equals("S")) {
-          Json.saveTheYear(compositionsToPlay, i, this, currentYear, years);
-          System.out.println("the current information has been saved");
-          System.exit(0);
-        } else {
-          input = "P";
-        }
-      }
+      musicPlayer(i);
       try { // 2-second delay between compositions
         Thread.sleep(2000);
       } catch (InterruptedException e) {
@@ -119,12 +134,51 @@ public class EcsBandAid {
     }
   }
 
+  public void resumeSave() {
+    currentYear = 0;
+    for (int i = 0; i < compositionsToPlay.size(); i++) {
+      Composition composition = compositionsToPlay.get(i);
+      System.out.println("Now playing " + composition.getName());
+      bandConductor.playComposition(composition);
+      System.out.println("");
+      musicPlayer(i);
+    }
+    currentYear = currentYear + 1;
+    for (; currentYear < years; currentYear++) {
+      performForAYear();
+    }
+  }
+
+  public void registerMusicians(ArrayList<Musician> musicians) {
+    for (Musician musician : musicians) {
+      bandConductor.registerMusician(musician);
+    }
+  }
+
   public static void main(String[] args) {
 //    String musiciansFilename = args[0];
 //    String compositionsFilename = args[1];
 //    int years = Integer.parseInt(args[2]);
 
-    //TODO implement reloading saved simulations
+    File saveFile = new File("savedSimulation.json");
+    if (saveFile.exists()) {
+      Scanner inputReader = new Scanner(System.in); //allows me to get input from command
+      boolean flag = true;
+      while (flag) {
+        System.out.println("Would you like to resume the last saved simulation?");
+        System.out.print("Enter 'Y' or 'N': ");
+        String input = inputReader.nextLine();
+        if (input.equals("Y")) {
+          //resumes last save
+          EcsBandAid myBand = Json.reloadTheYear();
+          myBand.resumeSave();
+          flag = false;
+        } else if (input.equals("N")) {
+          //starts new simulation
+          flag = false;
+        }
+      }
+    }
 
     //testing/debugging purposes
     String musiciansFilename =  "musicians.txt";
@@ -154,8 +208,10 @@ public class EcsBandAid {
     // so now we have all three objects we need to create the EcsBandAid Object
     // the SoundSystem, the musician collection, and the composition collection
     EcsBandAid myBand = new EcsBandAid(mySoundSystem, myMusicians, myCompositions);
-    for (int i = 0; i < years; i++) {
-      myBand.performForAYear(i, years);
+    myBand.setYears(years);
+
+    for (myBand.currentYear = 0;myBand.currentYear < myBand.years; myBand.currentYear++) {
+      myBand.performForAYear();
       System.out.println("The band has played for " + years + " years!");
     }
   }
