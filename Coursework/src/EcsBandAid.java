@@ -22,6 +22,8 @@ public class EcsBandAid {
     this.soundSystem = soundSystem;
     this.musicians = musicians;
     this.compositions = compositions;
+    compositionsToPlay = new ArrayList<>();
+    currentYear = 1;
     bandConductor = new Conductor("Bryan", this.soundSystem);
   }
 
@@ -70,6 +72,25 @@ public class EcsBandAid {
     }
   }
 
+  public void musiciansLeaveBand() {
+    // each musician IN the band leaves with chance of 50%
+    ArrayList<Musician> musiciansToRemove = new ArrayList<Musician>();
+    for (Musician musician : bandConductor.getMusicians()) { //each musician which is registered
+      float random = (float) Math.random(); //random number from 0 to 1
+      if (random <= 0.5) { //50% chance they leave the band
+        musiciansToRemove.add(musician);
+        System.out.println(musician.getName() + " has left the band");
+      } else {
+        //the musician chose to remain in the band
+      }
+    }
+    System.out.println("");
+    //I  remove them outside the previous loop to not encounter ConcurrentModificationException
+    for (Musician musician : musiciansToRemove) {
+      bandConductor.deregisterMusician(musician); //remove from the band
+    }
+  }
+
   public void performForAYear() {
     //plays 3 compositions a year
       //randomly choose 3 compositions
@@ -85,7 +106,7 @@ public class EcsBandAid {
     for (Composition composition : compositionsToPlay) {
       System.out.println(composition.getName());
     }
-    System.out.println("");
+    System.out.println();
 
       //invite musicians
     //I will implement that 70% of each musician will accept the invite
@@ -111,7 +132,7 @@ public class EcsBandAid {
       Composition composition = compositionsToPlay.get(i);
       System.out.println("Now playing " + composition.getName());
       bandConductor.playComposition(composition);
-      System.out.println("");
+      System.out.println();
       musicPlayer(i);
       try { // 2-second delay between compositions
         Thread.sleep(2000);
@@ -119,40 +140,8 @@ public class EcsBandAid {
         throw new RuntimeException(e);
       }
     }
-
-      // each musician IN the band leaves with chance of 50%
-    ArrayList<Musician> musiciansToRemove = new ArrayList<Musician>();
-    for (Musician musician : bandConductor.getMusicians()) { //each musician which is registered
-      float random = (float) Math.random(); //random number from 0 to 1
-      if (random <= 0.5) { //50% chance they leave the band
-        musiciansToRemove.add(musician);
-        System.out.println(musician.getName() + " has left the band");
-      } else {
-        //the musician chose to remain in the band
-      }
-    }
-    System.out.println("");
-    //I  remove them outside the previous loop to not encounter ConcurrentModificationException
-    for (Musician musician : musiciansToRemove) {
-      bandConductor.deregisterMusician(musician); //remove from the band
-    }
-  }
-
-  public void resumeSave() {
-    for (int i = 0; i < compositionsToPlay.size(); i++) {
-      Composition composition = compositionsToPlay.get(i);
-      System.out.println("Now playing " + composition.getName());
-      bandConductor.playComposition(composition);
-      System.out.println("");
-      musicPlayer(i);
-    }
-    currentYear = currentYear + 1;
-    System.out.println("The band has played for " + currentYear + " years!");
-    System.out.println();
-    for (; currentYear < years; currentYear++) {
-      performForAYear();
-      System.out.println("The band has played for " + currentYear + " years!");
-    }
+    //musicians leave at a 50% chance rate
+    musiciansLeaveBand();
   }
 
   public void registerMusicians(ArrayList<Musician> musicians) {
@@ -161,36 +150,35 @@ public class EcsBandAid {
     }
   }
 
-  public static void main(String[] args) {
-//    String musiciansFilename = args[0];
-//    String compositionsFilename = args[1];
-//    int years = Integer.parseInt(args[2]);
-
-    File saveFile = new File("savedSimulation.json");
-    if (saveFile.exists()) {
-      Scanner inputReader = new Scanner(System.in); //allows me to get input from command
-      boolean flag = true;
-      while (flag) {
-        System.out.println("Would you like to resume the last saved simulation?");
-        System.out.print("Enter 'Y' or 'N': ");
-        String input = inputReader.nextLine();
-        if (input.equals("Y")) {
-          //resumes last save
-          EcsBandAid myBand = Json.reloadTheYear();
-          myBand.resumeSave();
-          flag = false;
-        } else if (input.equals("N")) {
-          //starts new simulation
-          flag = false;
-        }
+  public void resumeSavedYear() {
+    //print out the compositions to play
+    System.out.println("The compositions to be played are: ");
+    for (Composition composition : compositionsToPlay) {
+      System.out.println(composition.getName());
+    }
+    System.out.println();
+    //plays remaining songs of the year
+    for (int i = 0; i < compositionsToPlay.size(); i++) {
+      Composition composition = compositionsToPlay.get(i);
+      System.out.println("Now playing " + composition.getName());
+      bandConductor.playComposition(composition);
+      System.out.println("");
+      musicPlayer(i);
+      try { // 2-second delay between compositions
+        Thread.sleep(2000);
+      } catch (InterruptedException e) {
+        throw new RuntimeException(e);
       }
     }
+    System.out.println("The band has played for " + currentYear + " years!");
+    System.out.println();
+    currentYear = currentYear + 1;
 
-    //testing/debugging purposes
-    String musiciansFilename =  "musicians.txt";
-    String compositionsFilename =  "compositions.txt";
-    int years = 3;
+    //musicians leave at 50% chance rate
+    musiciansLeaveBand();
+  }
 
+  public static EcsBandAid newSimulation(String musiciansFilename, String compositionsFilename, int years) {
     Scanner musicianReader;
     Scanner compositionReader;
 
@@ -215,10 +203,48 @@ public class EcsBandAid {
     // the SoundSystem, the musician collection, and the composition collection
     EcsBandAid myBand = new EcsBandAid(mySoundSystem, myMusicians, myCompositions);
     myBand.setYears(years);
+    return myBand;
+  }
 
-    for (myBand.currentYear = 0;myBand.currentYear < myBand.years; myBand.currentYear++) {
-      myBand.performForAYear();
-      System.out.println("The band has played for " + myBand.currentYear + " years!");
+  public void runSimulation() {
+    for (; currentYear <= years; currentYear++) {
+      performForAYear();
+      System.out.println("The band has played for " + currentYear + " years!");
     }
+  }
+
+  public static void main(String[] args) {
+//    String musiciansFilename = args[0];
+//    String compositionsFilename = args[1];
+//    int years = Integer.parseInt(args[2]);
+
+    //testing/debugging purposes
+    String musiciansFilename =  "musicians.txt";
+    String compositionsFilename =  "compositions.txt";
+    int years = 5;
+
+    File saveFile = new File("savedSimulation.json");
+    if (saveFile.exists()) {
+      Scanner inputReader = new Scanner(System.in); //allows me to get input from command
+      boolean flag = true;
+      while (flag) {
+        System.out.println("Would you like to resume the last saved simulation?");
+        System.out.print("Enter 'Y' or 'N': ");
+        String input = inputReader.nextLine();
+        if (input.equals("Y")) {
+          //resumes last save
+          EcsBandAid myBand = Json.reloadTheYear();
+          myBand.resumeSavedYear();
+          myBand.runSimulation();
+          flag = false;
+        } else if (input.equals("N")) {
+          //starts new simulation
+          EcsBandAid myBand = newSimulation(musiciansFilename, compositionsFilename, years);
+          myBand.runSimulation();
+          flag = false;
+        }
+      }
+    }
+    System.exit(0);
   }
 }

@@ -158,6 +158,36 @@ public class Json {
     return musicians;
   }
 
+  public static ArrayList<Musician> parseJsonToRegisteredMusicians(Iterator iterator, ArrayList<Musician> allMusicians) {
+    //fetches musicians' data
+    //layout: json array of maps | each map is a musicians data
+    ArrayList<Musician> musicians = new ArrayList<>();
+    while (iterator.hasNext()) { //whilst there is a map (musician) in the JSON array
+      String name = null;
+      String instrument = null;
+      Map musicianMap = (Map) iterator.next();
+      Iterator<Map.Entry> musicianIterator = musicianMap.entrySet().iterator();
+      while (musicianIterator.hasNext()) {
+        //assigns the musicians data to vairables
+        Map.Entry musicianPair = musicianIterator.next();
+        if (musicianPair.getKey().equals("name")) {
+          name = (String) musicianPair.getValue();
+        } else if (musicianPair.getKey().equals("instrument")) {
+          instrument = (String) musicianPair.getValue();
+        } else {
+          System.err.println("unrecognised musician data in save file");
+        }
+      }
+      //creates the corresponding musicians object
+      for (Musician musician : allMusicians) {
+        if (name.equals(musician.getName()) && instrument.equals(musician.getInstrument())) {
+          musicians.add(musician);
+        }
+      }
+    }
+    return musicians;
+  }
+
   public static ArrayList<Composition> parseJsonToCompositions(Iterator iterator) {
     //fetches compositions' data
     //layout: json array of maps | each map is a composition
@@ -228,6 +258,7 @@ public class Json {
     return compositions;
   }
   public static EcsBandAid reloadTheYear() {
+    //opens the JSON file
     JSONParser myParser = new JSONParser();
     Object myObject = null;
     try {
@@ -239,31 +270,32 @@ public class Json {
     }
     JSONObject json = (JSONObject) myObject;
 
+    //the years data of the saved simulation
     int currentYear = (int) ((long) json.get("year"));
     int totalYears = (int) ((long)json.get("totalYears"));
 
     //sound system to pass to musicians
     SoundSystem soundSystem = Helper.createSoundSystem();
 
-    //creates an array list of the compositions to play
-    JSONArray compositionsToPlayJson = (JSONArray) json.get("compositionsToPlay");
-    Iterator compositionsToPlayIterator = compositionsToPlayJson.iterator();
-    ArrayList<Composition> compositionsToPlay = parseJsonToCompositions(compositionsToPlayIterator);
-
-    //creates an array list of registered musicians
-    JSONArray registeredMusiciansJson = (JSONArray) json.get("registeredMusicians");
-    Iterator registeredMusiciansIterator = registeredMusiciansJson.iterator();
-    ArrayList<Musician> registeredMusicians = parseJsonToMusician(registeredMusiciansIterator, soundSystem);
-
     //creates an array list of all the compositions
     JSONArray allCompositionsJson = (JSONArray) json.get("allCompositions");
     Iterator allCompositionsIterator = allCompositionsJson.iterator();
     ArrayList<Composition> allCompositions = parseJsonToCompositions(allCompositionsIterator);
 
+    //creates an array list of the compositions to play
+    JSONArray compositionsToPlayJson = (JSONArray) json.get("compositionsToPlay");
+    Iterator compositionsToPlayIterator = compositionsToPlayJson.iterator();
+    ArrayList<Composition> compositionsToPlay = parseJsonToCompositions(compositionsToPlayIterator);
+
     //creates an array of all musicians
     JSONArray allMusiciansJson = (JSONArray) json.get("allMusicians");
     Iterator allMusiciansIterator = allMusiciansJson.iterator();
     ArrayList<Musician> allMusicians = parseJsonToMusician(allMusiciansIterator, soundSystem);
+
+    //creates an array list of registered musicians
+    JSONArray registeredMusiciansJson = (JSONArray) json.get("registeredMusicians");
+    Iterator registeredMusiciansIterator = registeredMusiciansJson.iterator();
+    ArrayList<Musician> registeredMusicians = parseJsonToRegisteredMusicians(registeredMusiciansIterator, allMusicians);
 
     //returns an EcsBandAid object
     EcsBandAid myBand = new EcsBandAid(soundSystem, allMusicians, allCompositions);
