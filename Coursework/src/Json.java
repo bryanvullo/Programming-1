@@ -62,16 +62,15 @@ public class Json {
     musicianMap.put("instrument", instrument);
     return musicianMap;
   }
-  public static void saveTheYear(ArrayList<Composition> compositionsToPlay,
-      int currentCompositionIndex, EcsBandAid myBand,
-      int currentYear, int years) {
+  public static void saveTheYear(int currentCompositionIndex, EcsBandAid myBand) {
     //create a JSON file with all the current information
     ArrayList<Musician> allMusicians = myBand.getMusicians();
     ArrayList<Musician> registeredMusicians = myBand.getBandConductor().getMusicians();
     ArrayList<Composition> allCompositions = myBand.getCompositions();
+    ArrayList<Composition> compositionsToPlay = myBand.getCompositionsToPlay();
 
     //removes the compositions that have been played already
-    for (int i = currentCompositionIndex; i == 0; i--) {
+    for (int i = currentCompositionIndex; i <= 0; i--) {
       compositionsToPlay.remove(i);
     }
 
@@ -84,8 +83,8 @@ public class Json {
     // 5) all the compositions given in this simulation
 
     //adds the years data
-    json.put("year", currentYear);
-    json.put("totalYears", years);
+    json.put("year", myBand.getCurrentYear());
+    json.put("totalYears", myBand.getYears());
 
     // adds all the compositions which still need to be played for the year
     JSONArray compositionsToPlayArray = new JSONArray();
@@ -131,7 +130,7 @@ public class Json {
   }
 
     //reloading methods
-  public static ArrayList<Musician> parseJsonToMusician(Iterator iterator, SoundSystem soundSystem) {
+  private static ArrayList<Musician> parseJsonToMusician(Iterator iterator, SoundSystem soundSystem) {
     //fetches musicians' data
     //layout: json array of maps | each map is a musicians data
     ArrayList<Musician> musicians = new ArrayList<>();
@@ -158,7 +157,7 @@ public class Json {
     return musicians;
   }
 
-  public static ArrayList<Musician> parseJsonToRegisteredMusicians(Iterator iterator, ArrayList<Musician> allMusicians) {
+  private static ArrayList<Musician> parseJsonToRegisteredMusicians(Iterator iterator, ArrayList<Musician> allMusicians) {
     //fetches musicians' data
     //layout: json array of maps | each map is a musicians data
     ArrayList<Musician> musicians = new ArrayList<>();
@@ -188,7 +187,7 @@ public class Json {
     return musicians;
   }
 
-  public static ArrayList<Composition> parseJsonToCompositions(Iterator iterator) {
+  private static ArrayList<Composition> parseJsonToCompositions(Iterator iterator) {
     //fetches compositions' data
     //layout: json array of maps | each map is a composition
     ArrayList<Composition> compositions = new ArrayList<>();

@@ -21,7 +21,7 @@ where:
 
 ### details of each part ###
 
-Part1:
+## Part1: ##
 created package 'people' with class 'Person' with attribute 'String name'.
 I made the 'name' attribute 'private' to ensure encapsulation.
 created the constructor which takes a String and assigns it to 'name'.
@@ -68,7 +68,7 @@ The method implementation is also in the 'MusicianPerson' class:
     i.e. if soft is true, then loudness is set to SOFT
   playNextNote - if it has a next note then it plays it
 
-Part2:
+## Part2: ##
 New 'Orchestra' class
 the constructor initialised a hashmap, type Integer-Musician, of size 16.
 each Integer key's value is set to null at initialisation (no one is seated yet)
@@ -82,7 +82,7 @@ orchestra methods:
   standUp - makes a musician stand up
   playNextNote - makes every musician that is seated play their next note
 
-Part3:
+## Part3: ##
 New 'MusicScore' class inside music package
 the constructor: MusicScore(String instrumentName, int[] notes, boolean soft)
 sets member variables 'instrumentName', 'notes', 'soft' to their respective parameter
@@ -113,7 +113,7 @@ I also implemented more methods:
   deregisterMusician - removes the musician from the ArrayList 'Musicians'
   getMusicians - returns the ArrayList 'Musicians'
 
-Part4
+## Part4 ##
 New class 'MusicSheet' concrete implementation of 'Composition' in music 'package'
 constructor: MusicSheet(String name, String tempo, int length)
   sets the respective parameters to the member attributes
@@ -127,7 +127,7 @@ I also implemented:
   convertNote - takes in the String representation of the note and returns the
    int of the note used in the sound system
 
-Part5
+## Part5 ##
 New EcsBandAid class
 constructor: EcsBandAid(SoundSystem soundSystem, ArrayList<Musician> musicians,
  ArrayList<Composition> compositions)
@@ -144,7 +144,7 @@ with method:
     Musicians randomly leave - each musician has a 50% to leave after performing for a year,
       (3 compositions)
 
-Part6
+## Part6 ##
 I decided to create an additional class for this part, 'Helper' placed in the 'utils' package.
 'Helper' has a list of static methods to help remove and modularise the main method in 'EcsBandAid'
 list of static methods can be seen as a library of methods.
@@ -167,3 +167,68 @@ the args are stored in variables
 then calls on the static methods in 'Helper' to create objects
 these objects are used to create the 'EcsBandAid' object 'myBand'
 'myBand' calls 'performForAYear' for the amount of years given as an arg to the main method
+
+## Extension ##
+I have implemented the following extensions:
+After each composition, the user may choose to pause the simulation - by entering 'P'.
+When paused the user can choose to either:
+  resume - by entering 'R'
+  save - by entering 'S'
+Saving a simulation will store the current state of the program in one JSON file called savedSimulation.json
+Once a simulation is saved, when running the program again, the save file will be detected and
+the program will ask if the user wishes to continue their new simulation or continue with their
+saved simulation.
+If the user wishes to continue their saved simulation, then all the data from the JSON file is loaded,
+parsed and used to recreate the previous objects. The saved simulation will resume as normal and can
+be saved again.
+NOTE: only one simulation can be saved! When a simulation is saved, the previous simulation is discarded.
+
+As this code is run before any objects are made,
+I created the "Json" class which has many 'static' methods.
+There are two sets of methods in this class:
+1) used to save the simulation
+  saveTheYear - takes the EcsBandAid object and the current composition index
+    stores 6 items in a JSON file:
+    1) the current year of the simulation
+    2) the total years the simulation needs to run for given from the configuration argument
+    3) all the compositions given from the configuration file
+    4) the compositions to be played in this current year
+    5) all the musicians given from the configuration file
+    6) the musicians which are currently registered with the conductor
+  parseCompositionToJson - takes a Composition as a parameter and returns a Map
+  parseMusicianToJson - takes a Musician as a parameter and returns a Map
+  NOTE: Map objects are used to store information in a JSON file. I chose to use JSON files as I
+    have previous experience in using them and find them very efficient in storing data.
+2) used to load a saved simulation
+  reloadTheYear - takes no parameters and returns an EcsBandAid object
+    retrieves the 6 items described in 'saveTheYear' method and stores them in the EcsBandAid object
+  parseJsonToComposition - takes an Iterator of the JSON array and returns an ArrayList of Composition objects
+  parseJsonToMusician - takes an Iterator of the JSON array and a SoundSystem object
+    and returns an ArrayList of MusicianPerson objects
+  parseJsonToRegisteredMusician - takes an Iterator object and an Arraylist of MusicianPerson objects,
+    and finds the Objects in the ArrayList which are described in the JSON array and adds them to another
+    ArrayList and returns the new ArrayList.
+    NOTE: this is so that duplicate objects are not created, i.e. if the Musician 'John' was registered
+      when the simulation was saved. Then when reloaded, only one Musician object 'John' is created
+      but referenced in both ArrayLists.
+
+The class MusicianFactory implements a Factory design pattern so that when reading the text file or
+JSON file, I can create the specific MusicianPerson objects such as Violinist, Cellist, Pianist all
+from one method, which prevents me from writing duplicate code.
+
+I also implemented other new methods in EcsBandAid:
+getMusicians - returns all musicians
+getCompositions - returns all compositions
+getBandConductor - returns conductor
+setCurrentYear - sets the current year
+getCurrentYear - returns the current year
+setYear - sets the total years given in configuration argument
+getYears - returns total years given in configuration argument
+setCompositionsToPlay - sets the ArrayList of compositions to play in the current year
+getCompositionsToPlay - returns the ArrayList of compositions to play in the current year
+musicPlayer - gets the input from the user after each composition
+musiciansLeaveBand - musicians registered with the conductor leave at a 50% rate
+registerMusicians - registers all musicians in the ArrayList given (only used when loading a saved simulation)
+resumeSavedYear - plays the rest of the compositions for the year (only used when loading a saved simulation)
+newSimulation - returns a new EscBandAid object made from the configuration files and arguments
+runSimulation - runs the simulation until the final year

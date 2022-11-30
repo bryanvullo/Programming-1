@@ -47,8 +47,20 @@ public class EcsBandAid {
     this.currentYear = currentYear;
   }
 
+  public int getYears() {
+    return years;
+  }
+
+  public int getCurrentYear() {
+    return currentYear;
+  }
+
   public void setCompositionsToPlay(ArrayList<Composition> compositionsToPlay) {
     this.compositionsToPlay = compositionsToPlay;
+  }
+
+  public ArrayList<Composition> getCompositionsToPlay() {
+    return compositionsToPlay;
   }
 
   public void musicPlayer(int currentCompositionIndex) {
@@ -63,7 +75,7 @@ public class EcsBandAid {
       if (input.equals("R")) {
         //this breaks the loop and resumes
       } else if (input.equals("S")) {
-        Json.saveTheYear(compositionsToPlay, currentCompositionIndex, this, currentYear, years);
+        Json.saveTheYear(currentCompositionIndex, this);
         System.out.println("the current information has been saved");
         System.exit(0);
       } else {
