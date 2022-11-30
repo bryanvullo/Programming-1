@@ -174,14 +174,16 @@ After each composition, the user may choose to pause the simulation - by enterin
 When paused the user can choose to either:
   resume - by entering 'R'
   save - by entering 'S'
-Saving a simulation will store the current state of the program in one JSON file called savedSimulation.json
+Saving a simulation will store the current state of the program in one JSON file called
+savedSimulation.json
 Once a simulation is saved, when running the program again, the save file will be detected and
 the program will ask if the user wishes to continue their new simulation or continue with their
 saved simulation.
 If the user wishes to continue their saved simulation, then all the data from the JSON file is loaded,
 parsed and used to recreate the previous objects. The saved simulation will resume as normal and can
 be saved again.
-NOTE: only one simulation can be saved! When a simulation is saved, the previous simulation is discarded.
+NOTE: only one simulation can be saved! When a simulation is saved, the previous saved
+simulation is discarded.
 
 As this code is run before any objects are made,
 I created the "Json" class which has many 'static' methods.
@@ -212,7 +214,7 @@ There are two sets of methods in this class:
       when the simulation was saved. Then when reloaded, only one Musician object 'John' is created
       but referenced in both ArrayLists.
 
-The class MusicianFactory implements a Factory design pattern so that when reading the text file or
+The class MusicianFactory implements a Factory pattern design so that when reading the text file or
 JSON file, I can create the specific MusicianPerson objects such as Violinist, Cellist, Pianist all
 from one method, which prevents me from writing duplicate code.
 
@@ -232,3 +234,12 @@ registerMusicians - registers all musicians in the ArrayList given (only used wh
 resumeSavedYear - plays the rest of the compositions for the year (only used when loading a saved simulation)
 newSimulation - returns a new EscBandAid object made from the configuration files and arguments
 runSimulation - runs the simulation until the final year
+
+new attributes in EcsBandAid:
+  compositionsToPlay
+  years
+  currentYear
+
+getInstrument method in Musician class
+getInstrumentName method in MusicScore class
+getTempo is now public in MusicScore class
