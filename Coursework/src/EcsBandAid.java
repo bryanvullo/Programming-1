@@ -41,6 +41,10 @@ public class EcsBandAid {
     this.years = years;
   }
 
+  public void setCurrentYear(int currentYear) {
+    this.currentYear = currentYear;
+  }
+
   public void setCompositionsToPlay(ArrayList<Composition> compositionsToPlay) {
     this.compositionsToPlay = compositionsToPlay;
   }
@@ -135,7 +139,6 @@ public class EcsBandAid {
   }
 
   public void resumeSave() {
-    currentYear = 0;
     for (int i = 0; i < compositionsToPlay.size(); i++) {
       Composition composition = compositionsToPlay.get(i);
       System.out.println("Now playing " + composition.getName());
@@ -144,8 +147,11 @@ public class EcsBandAid {
       musicPlayer(i);
     }
     currentYear = currentYear + 1;
+    System.out.println("The band has played for " + currentYear + " years!");
+    System.out.println();
     for (; currentYear < years; currentYear++) {
       performForAYear();
+      System.out.println("The band has played for " + currentYear + " years!");
     }
   }
 
@@ -212,7 +218,7 @@ public class EcsBandAid {
 
     for (myBand.currentYear = 0;myBand.currentYear < myBand.years; myBand.currentYear++) {
       myBand.performForAYear();
-      System.out.println("The band has played for " + years + " years!");
+      System.out.println("The band has played for " + myBand.currentYear + " years!");
     }
   }
 }

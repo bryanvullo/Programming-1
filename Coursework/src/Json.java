@@ -241,7 +241,6 @@ public class Json {
 
     int currentYear = (int) ((long) json.get("year"));
     int totalYears = (int) ((long)json.get("totalYears"));
-    int remainingYears = totalYears - currentYear;
 
     //sound system to pass to musicians
     SoundSystem soundSystem = Helper.createSoundSystem();
@@ -270,7 +269,8 @@ public class Json {
     EcsBandAid myBand = new EcsBandAid(soundSystem, allMusicians, allCompositions);
     myBand.registerMusicians(registeredMusicians);
     myBand.setCompositionsToPlay(compositionsToPlay);
-    myBand.setYears(remainingYears);
+    myBand.setYears(totalYears);
+    myBand.setCurrentYear(currentYear);
 
     return myBand;
   }
