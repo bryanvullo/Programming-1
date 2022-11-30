@@ -11,10 +11,8 @@ import music.MusicSheet;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import people.musicians.Cellist;
 import people.musicians.Musician;
-import people.musicians.Pianist;
-import people.musicians.Violinist;
+import people.musicians.MusicianFactory;
 import utils.Helper;
 import utils.SoundSystem;
 
@@ -154,18 +152,8 @@ public class Json {
         }
       }
       //creates the corresponding musicians object
-      if (instrument.equals("Violin")) {
-        Violinist musician = new Violinist(name, soundSystem);
-        musicians.add(musician);
-      } else if (instrument.equals("Cello")) {
-        Cellist musician = new Cellist(name, soundSystem);
-        musicians.add(musician);
-      } else if (instrument.equals("Piano")) {
-        Pianist musician = new Pianist(name, soundSystem);
-        musicians.add(musician);
-      } else {
-        System.err.println("unrecognised instrument data in save file");
-      }
+      Musician musician = MusicianFactory.createMusician(instrument, name, soundSystem);
+      musicians.add(musician);
     }
     return musicians;
   }

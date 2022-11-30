@@ -8,10 +8,8 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 import music.Composition;
 import music.MusicSheet;
-import people.musicians.Cellist;
 import people.musicians.Musician;
-import people.musicians.Pianist;
-import people.musicians.Violinist;
+import people.musicians.MusicianFactory;
 
 public class Helper {
 
@@ -45,18 +43,7 @@ public class Helper {
       String line = musicianReader.nextLine();
       line = line.replaceAll("\\)",""); //removes the trailing ) character at the end
       String[] words = line.split("\\(" ); //splits the line into the two musician and instrument
-      Musician musician = null;
-      if (words[1].equals("Piano")) {
-        musician = new Pianist(words[0], mySoundSystem);
-      } else if (words[1].equals("Cello")) {
-        musician = new Cellist(words[0], mySoundSystem);
-      } else if (words[1].equals("Violin")) {
-        musician = new Violinist(words[0], mySoundSystem);
-      } else {
-        System.err.println("we only accept piano, cello and violin musicians, given " + words[1]);
-        System.err.println("defaulted to piano"); //handled 'gracefully'
-        musician = new Pianist(words[0], mySoundSystem);
-      }
+      Musician musician = MusicianFactory.createMusician(words[1], words[0], mySoundSystem);
       myMusicians.add(musician);
     }
     return myMusicians;
