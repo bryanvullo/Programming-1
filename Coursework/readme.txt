@@ -1,5 +1,4 @@
-To run the program with the extension, please use the following
-command
+To run the program with the extension, please use the following command:
 
 java EcsBandAid musicians.txt compositions.txt 10
 where:
@@ -18,6 +17,9 @@ where:
         InstrumentName, loud/soft, {note, note, ...}
 
   10 is the number of years for simulation.
+
+NOTE: I have used the JSON-simple-1.1 library. If you encounter a problem when compiling, add the
+"json-simple-1.1.jar" file in the "Project Structure > Libraries" in IntelliJ.
 
 ### details of each part ###
 
@@ -137,8 +139,8 @@ with method:
    4 parts of this method:
     Randomly chooses 3 compositions - I shuffle the 'compositions' ArrayList and pick the
       first element, 3 times to get three random compositions
-    Randomly invites musicians - I shuffle the 'musicians' ArrayList and sequentially invite the
-      musicians. Each invitation has a 70% chance that it will be accepted.
+    Invites musicians - it calculates the needed musicians of each type (Violinist, Cellist, Pianist)
+     to perform for the year, and only invites the needed musicians
     Plays the compositions - loop through the 'compositionsToPlay' list and play each one.
       Note: not all accepted musicians will play this composition; only the ones needed.
     Musicians randomly leave - each musician has a 50% to leave after performing for a year,
