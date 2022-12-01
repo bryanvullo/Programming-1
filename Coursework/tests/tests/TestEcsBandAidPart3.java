@@ -339,7 +339,8 @@ public class TestEcsBandAidPart3 {
     }
 
     /**
-     * Test the {@link people.conductors.Conductor#Conductor(String, utils.SoundSystem)} constructor.
+     * Test the {@link people.conductors.Conductor#Conductor(String, utils.SoundSystem)}
+     * constructor.
      */
     @Test
     @DisplayName("Test people.conductors.Conductor#Conductor(String, SoundSystem) constructor")
@@ -382,7 +383,8 @@ public class TestEcsBandAidPart3 {
     }
 
     /**
-     * Test the {@link people.conductors.Conductor#registerMusician(people.musicians.Musician)} method.
+     * Test the {@link people.conductors.Conductor#registerMusician(people.musicians.Musician)}
+     * method.
      */
     @Test
     @DisplayName("Test people.conductors.Conductor#registerMusician(Musician) method")

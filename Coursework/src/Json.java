@@ -17,7 +17,8 @@ import utils.Helper;
 import utils.SoundSystem;
 
 public class Json {
-    //saving methods
+
+  //saving methods
   private static Map parseCompositionToJson(Composition composition) {
     //name, tempo and length of the composition
     Map compositionMap = new LinkedHashMap();
@@ -62,6 +63,7 @@ public class Json {
     musicianMap.put("instrument", instrument);
     return musicianMap;
   }
+
   public static void saveTheYear(int currentCompositionIndex, EcsBandAid myBand) {
     //create a JSON file with all the current information
     ArrayList<Musician> allMusicians = myBand.getMusicians();
@@ -129,8 +131,9 @@ public class Json {
     }
   }
 
-    //reloading methods
-  private static ArrayList<Musician> parseJsonToMusician(Iterator iterator, SoundSystem soundSystem) {
+  //reloading methods
+  private static ArrayList<Musician> parseJsonToMusician(Iterator iterator,
+      SoundSystem soundSystem) {
     //fetches musicians' data
     //layout: json array of maps | each map is a musicians data
     ArrayList<Musician> musicians = new ArrayList<>();
@@ -157,7 +160,8 @@ public class Json {
     return musicians;
   }
 
-  private static ArrayList<Musician> parseJsonToRegisteredMusicians(Iterator iterator, ArrayList<Musician> allMusicians) {
+  private static ArrayList<Musician> parseJsonToRegisteredMusicians(Iterator iterator,
+      ArrayList<Musician> allMusicians) {
     //fetches musicians' data
     //layout: json array of maps | each map is a musicians data
     ArrayList<Musician> musicians = new ArrayList<>();
@@ -208,7 +212,7 @@ public class Json {
         } else if (compositionPair.getKey().equals("tempo")) {
           tempo = (String) compositionPair.getValue();
         } else if (compositionPair.getKey().equals("length")) {
-          length = (int) ((long)compositionPair.getValue());
+          length = (int) ((long) compositionPair.getValue());
         } else if (compositionPair.getKey().equals("scores")) {
           //scores are saved in a separate JSON array | each Map in the array is a score
           JSONArray scoresArray = (JSONArray) compositionPair.getValue();
@@ -256,6 +260,7 @@ public class Json {
     }
     return compositions;
   }
+
   public static EcsBandAid reloadTheYear() {
     //opens the JSON file
     JSONParser myParser = new JSONParser();
@@ -271,7 +276,7 @@ public class Json {
 
     //the years data of the saved simulation
     int currentYear = (int) ((long) json.get("year"));
-    int totalYears = (int) ((long)json.get("totalYears"));
+    int totalYears = (int) ((long) json.get("totalYears"));
 
     //sound system to pass to musicians
     SoundSystem soundSystem = Helper.createSoundSystem();
@@ -294,7 +299,8 @@ public class Json {
     //creates an array list of registered musicians
     JSONArray registeredMusiciansJson = (JSONArray) json.get("registeredMusicians");
     Iterator registeredMusiciansIterator = registeredMusiciansJson.iterator();
-    ArrayList<Musician> registeredMusicians = parseJsonToRegisteredMusicians(registeredMusiciansIterator, allMusicians);
+    ArrayList<Musician> registeredMusicians = parseJsonToRegisteredMusicians(
+        registeredMusiciansIterator, allMusicians);
 
     //returns an EcsBandAid object
     EcsBandAid myBand = new EcsBandAid(soundSystem, allMusicians, allCompositions);

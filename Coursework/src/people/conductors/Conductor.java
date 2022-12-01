@@ -9,9 +9,11 @@ import people.musicians.Musician;
 import utils.SoundSystem;
 
 public class Conductor extends Person {
+
   private SoundSystem soundSystem;
   private ArrayList<Musician> musicians = new ArrayList<Musician>();
   private Orchestra orchestra = new Orchestra(); //public because EcsBandAid uses this
+
   public Conductor(String name, SoundSystem soundSystem) {
     super(name);
     this.soundSystem = soundSystem;
@@ -40,11 +42,11 @@ public class Conductor extends Person {
     //assign scores
     MusicScore[] scores = composition.getScores();
     for (MusicScore score : scores) { // loops through all the scores for each instrument
-      for (Musician musician: musicians) { //loops through each musician assigned to the conductor
+      for (Musician musician : musicians) { //loops through each musician assigned to the conductor
         if (score.getInstrumentID() == musician.getInstrumentID()) {
           //if already assigned a score
-          if (musician.hasScore()){ //this ensures that scores of the same instrument
-              //can be assigned to different musicians of that type
+          if (musician.hasScore()) { //this ensures that scores of the same instrument
+            //can be assigned to different musicians of that type
             //do nothing
           } else {
             //if the score is for the instrument that the musician in playing
@@ -74,8 +76,7 @@ public class Conductor extends Person {
       try { //Thread.sleep needs to be wrapped in try/catch
         orchestra.playNextNote();
         Thread.sleep(composition.getNoteLength()); //how long the note is played for
-      }
-      catch (InterruptedException e) {
+      } catch (InterruptedException e) {
         System.err.println(e);
       }
     }

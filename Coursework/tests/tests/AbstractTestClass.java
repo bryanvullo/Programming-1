@@ -992,7 +992,7 @@ public abstract class AbstractTestClass {
       try {
         testConstructor();
       } catch (InstantiationException | IllegalAccessException | IllegalArgumentException
-          | InvocationTargetException e) {
+               | InvocationTargetException e) {
         e.printStackTrace();
         fail(message);
       }
@@ -1042,7 +1042,7 @@ public abstract class AbstractTestClass {
       try {
         testMethod();
       } catch (IllegalAccessException | IllegalArgumentException
-          | InvocationTargetException e) {
+               | InvocationTargetException e) {
         e.printStackTrace();
         fail(message);
       }

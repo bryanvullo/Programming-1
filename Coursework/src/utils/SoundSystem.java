@@ -67,12 +67,11 @@ public class SoundSystem {
   private int[] instruments = new int[MAX_INSTRUMENTS];
 
   /**
-   * Create a new synthesizer and open it ready for playing.
-   * Add in the instruments from the default soundbank.
+   * Create a new synthesizer and open it ready for playing. Add in the instruments from the default
+   * soundbank.
    *
-   * @throws MidiUnavailableException
-   *   if the synthesizer is not available due to resource restrictions, or no synthesizer is
-   *   installed in the system
+   * @throws MidiUnavailableException if the synthesizer is not available due to resource
+   *                                  restrictions, or no synthesizer is installed in the system
    */
   public SoundSystem() throws MidiUnavailableException {
 
@@ -128,10 +127,11 @@ public class SoundSystem {
    * Method to set the instrument to the Sound System.
    *
    * @param instrumentPosition The position of the instrument in the Sound System. This must be
-   *                          between 0 and 15.
-   * @param instrument The ID of the input instrument. See
-   *                  <a href=https://en.wikipedia.org/wiki/General_MIDI#Program_change_events>Wikipedia</a>
-   *                  for instrument IDs.
+   *                           between 0 and 15.
+   * @param instrument         The ID of the input instrument. See
+   *                           <a
+   *                           href=https://en.wikipedia.org/wiki/General_MIDI#Program_change_events>Wikipedia</a>
+   *                           for instrument IDs.
    */
   public void setInstrument(int instrumentPosition, int instrument) {
     midiChannels[instrumentPosition].programChange(instrument);
@@ -144,10 +144,10 @@ public class SoundSystem {
    * be printed to the console.
    *
    * @param instrumentPosition The position of the instrument in the Sound System. This must be
-   *                          between 0 and 15.
-   * @param note The note to be played on the sound system. This is a MIDI note number (between 0
-   *            and 127).
-   * @param loudness The loudness level of the note to be played.
+   *                           between 0 and 15.
+   * @param note               The note to be played on the sound system. This is a MIDI note number
+   *                           (between 0 and 127).
+   * @param loudness           The loudness level of the note to be played.
    */
   public void playNote(int instrumentPosition, int note, int loudness) {
     //If we have MIDI then stop the previous note if there was one and play the new one.
@@ -163,11 +163,10 @@ public class SoundSystem {
     if (textMode) {
       if (note != 0) {
         System.out.println(
-                "Playing note " + note + " on instrument " + instruments[instrumentPosition]);
-      }
-      else {
+            "Playing note " + note + " on instrument " + instruments[instrumentPosition]);
+      } else {
         System.out.println(
-                "Silent on instrument " + instruments[instrumentPosition]);
+            "Silent on instrument " + instruments[instrumentPosition]);
       }
     }
   }
@@ -177,7 +176,7 @@ public class SoundSystem {
    * mode is off).
    *
    * @param position The input position of the instrument.
-   * @param note The note to be turned off immediately.
+   * @param note     The note to be turned off immediately.
    */
   private void stopNote(int position, int note) {
     if (!silentMode) {
@@ -185,15 +184,16 @@ public class SoundSystem {
     }
     if (textMode) {
       System.out.println(
-              "Stop note " + note + " on instrument " + instruments[position]);
+          "Stop note " + note + " on instrument " + instruments[position]);
     }
   }
 
   /**
    * Mutator method for setting the silent mode.
    *
-   * @param silentMode <code>true</code> to enable the silent mode and <code>false</code> to disable
-   *                  the silent mode.
+   * @param silentMode <code>true</code> to enable the silent mode and <code>false</code> to
+   *                   disable
+   *                   the silent mode.
    */
   public void setSilentMode(boolean silentMode) {
     this.silentMode = silentMode;
@@ -202,8 +202,9 @@ public class SoundSystem {
   /**
    * Mutator method for setting the text mode.
    *
-   * @param textMode <code>true</code> to enable the text mode and <code>false</code> to disable the
-   *                text mode.
+   * @param textMode <code>true</code> to enable the text mode and <code>false</code> to disable
+   *                 the
+   *                 text mode.
    */
   public void setTextMode(boolean textMode) {
     this.textMode = textMode;

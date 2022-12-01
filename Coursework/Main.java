@@ -34,9 +34,9 @@ public class Main {
 
     String[] LongHBDSong =
         {"C4", "C4", "D4", "none", "C4", "none", "F4", "none", "E4", "none", "none", "none",
-        "C4", "C4", "D4", "none", "C4", "none", "G4", "none", "F4", "none", "none", "none",
-        "C4", "C4", "C5", "none", "A4", "none", "F4", "none", "E4", "none", "D4", "none",
-        "A#4", "A#4", "A4", "none", "F4", "none", "G4", "none", "F4", "none"};
+            "C4", "C4", "D4", "none", "C4", "none", "G4", "none", "F4", "none", "none", "none",
+            "C4", "C4", "C5", "none", "A4", "none", "F4", "none", "E4", "none", "D4", "none",
+            "A#4", "A#4", "A4", "none", "F4", "none", "G4", "none", "F4", "none"};
 
     MusicSheet myRickRoll = new MusicSheet("RickRoll", "Moderato", 10);
     myRickRoll.addScore("Violin", List.of(score), true);

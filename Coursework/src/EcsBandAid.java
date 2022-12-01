@@ -10,6 +10,7 @@ import utils.Helper;
 import utils.SoundSystem;
 
 public class EcsBandAid {
+
   private SoundSystem soundSystem;
   private ArrayList<Musician> musicians;
   private ArrayList<Composition> compositions;
@@ -105,7 +106,7 @@ public class EcsBandAid {
   }
 
   public void performForAYear() {
-      //plays 3 compositions a year
+    //plays 3 compositions a year
     //randomly choose 3 compositions
     compositionsToPlay.clear();
     for (int i = 0; i < 3; i++) {
@@ -156,7 +157,7 @@ public class EcsBandAid {
       }
     }
 
-      //invite musicians
+    //invite musicians
     Collections.shuffle(musicians); //shuffles the musicians so it's random
     //invite the right amount of Violinist
     for (; violinistNeeded > 0; --violinistNeeded) {
@@ -193,7 +194,7 @@ public class EcsBandAid {
     }
     System.out.println("");
 
-      //perform the composition
+    //perform the composition
     for (int i = 0; i < 3; i++) {
       Composition composition = compositionsToPlay.get(i);
       System.out.println("Now playing " + composition.getName());
@@ -244,7 +245,8 @@ public class EcsBandAid {
     musiciansLeaveBand();
   }
 
-  public static EcsBandAid newSimulation(String musiciansFilename, String compositionsFilename, int years) {
+  public static EcsBandAid newSimulation(String musiciansFilename, String compositionsFilename,
+      int years) {
     Scanner musicianReader;
     Scanner compositionReader;
 
@@ -285,8 +287,8 @@ public class EcsBandAid {
 //    int years = Integer.parseInt(args[2]);
 
     //testing/debugging purposes
-    String musiciansFilename =  "musicians.txt";
-    String compositionsFilename =  "compositions.txt";
+    String musiciansFilename = "musicians.txt";
+    String compositionsFilename = "compositions.txt";
     int years = 5;
 
     File saveFile = new File("savedSimulation.json");

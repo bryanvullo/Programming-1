@@ -158,7 +158,8 @@ public class TestEcsBandAidPart2 {
     }
 
     /**
-     * Test the specification of {@link orchestra.Orchestra#sitDown(people.musicians.Musician)} method.
+     * Test the specification of {@link orchestra.Orchestra#sitDown(people.musicians.Musician)}
+     * method.
      */
     @Test
     @DisplayName("Test orchestra.Orchestra#sitDown(Musician) method")
@@ -171,7 +172,7 @@ public class TestEcsBandAidPart2 {
         Method sitDownMethod = assertMethod(PRECONDITION, int.class, "sitDown",
             musicianInterface);
         Field seatField = assertInheritedField(violinistClass, PRECONDITION, "seat");
-        Method setSilentModeMethod = assertMethod(soundSystemClass, PRECONDITION,"setSilentMode",
+        Method setSilentModeMethod = assertMethod(soundSystemClass, PRECONDITION, "setSilentMode",
             boolean.class);
 
         // create a new orchestra
@@ -314,7 +315,8 @@ public class TestEcsBandAidPart2 {
     }
 
     /**
-     * Test the specification of {@link orchestra.Orchestra#isSeated(people.musicians.Musician)} method.
+     * Test the specification of {@link orchestra.Orchestra#isSeated(people.musicians.Musician)}
+     * method.
      */
     @Test
     @DisplayName("Test orchestra.Orchestra#isSeated(Musician) method")
@@ -517,7 +519,8 @@ public class TestEcsBandAidPart2 {
     }
 
     /**
-     * Test the specification of {@link orchestra.Orchestra#standUp(people.musicians.Musician)} method.
+     * Test the specification of {@link orchestra.Orchestra#standUp(people.musicians.Musician)}
+     * method.
      */
     @Test
     @DisplayName("Test orchestra.Orchestra#playNextNote() method")
@@ -528,10 +531,13 @@ public class TestEcsBandAidPart2 {
         Method sitDownMethod = assertMethod(PRECONDITION, int.class, "sitDown",
             musicianInterface);
         Method playNextNoteMethod = assertMethod(PRECONDITION, "playNextNote");
-        Method readScoreMethod = assertAccessibleMethod(violinistClass, PRECONDITION, "readScore", INT_ARRAY_CLASS,
+        Method readScoreMethod = assertAccessibleMethod(violinistClass, PRECONDITION, "readScore",
+            INT_ARRAY_CLASS,
             boolean.class);
-        Field nextNoteField = assertInheritedField(violinistClass, PRECONDITION, "nextNote", INTEGER_ITERATOR_CLASS);
-        Method setSilentModeMethod = assertMethod(soundSystemClass, PRECONDITION, "setSilentMode", boolean.class);
+        Field nextNoteField = assertInheritedField(violinistClass, PRECONDITION, "nextNote",
+            INTEGER_ITERATOR_CLASS);
+        Method setSilentModeMethod = assertMethod(soundSystemClass, PRECONDITION, "setSilentMode",
+            boolean.class);
 
         // create a new orchestra
         final Object[] orchestraArray = new Object[1];
@@ -609,7 +615,7 @@ public class TestEcsBandAidPart2 {
           @Override
           protected void testMethod()
               throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-                readScoreMethod.invoke(alice, notes, true);
+            readScoreMethod.invoke(alice, notes, true);
           }
         }.run();
         // Let Bob read score
@@ -632,7 +638,7 @@ public class TestEcsBandAidPart2 {
         }.run();
 
         // Test if both Alice and Bob play their notes
-        final Iterator<Object>[]nextNote = new Iterator[1];
+        final Iterator<Object>[] nextNote = new Iterator[1];
         // Get the iterator for Alice
         new TestField(PRECONDITION + ": Failed to get alice#nextNote") {
           @Override

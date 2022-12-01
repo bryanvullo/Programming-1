@@ -7,6 +7,7 @@ import people.Person;
 import utils.SoundSystem;
 
 public abstract class MusicianPerson extends Person implements Musician {
+
   private String instrument;
   private int instrumentID;
   private int SOFT;

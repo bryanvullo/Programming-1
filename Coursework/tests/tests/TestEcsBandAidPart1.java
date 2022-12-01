@@ -110,7 +110,7 @@ public class TestEcsBandAidPart1 extends TestCoursework {
         try {
           alice = personConstructor.newInstance("Alice");
         } catch (InstantiationException | IllegalAccessException | IllegalArgumentException
-            | InvocationTargetException e) {
+                 | InvocationTargetException e) {
           e.printStackTrace();
           fail(PRECONDITION + ": Failed to create a person using Person(String) constructor");
           return;
@@ -120,7 +120,7 @@ public class TestEcsBandAidPart1 extends TestCoursework {
           Object name = getNameMethod.invoke(alice);
           assertEquals("Alice", name, ": Incorrect person's name");
         } catch (IllegalAccessException | IllegalArgumentException
-            | InvocationTargetException e) {
+                 | InvocationTargetException e) {
           e.printStackTrace();
           fail(": Failed to execute Person.getName() method");
         }
@@ -246,12 +246,14 @@ public class TestEcsBandAidPart1 extends TestCoursework {
     public void testViolinist_constructor1() {
       assertTimeout(ofMillis(1000), () -> {
         Field soundSystemField = assertInheritedField(PRECONDITION, "soundSystem");
-        Constructor<?> violinistConstructor = assertConstructor(PRECONDITION, String.class, soundSystemClass);
+        Constructor<?> violinistConstructor = assertConstructor(PRECONDITION, String.class,
+            soundSystemClass);
         Method getNameMethod = assertAccessibleMethod(PRECONDITION, "getName");
         Object soundSystem = null;
         try {
           soundSystem = soundSystemConstructor.newInstance();
-        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | InstantiationException e) {
+        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException |
+                 InstantiationException e) {
           e.printStackTrace();
           fail(PRECONDITION + ": Failed to create a sound system using SoundSystem()");
         }
@@ -259,7 +261,8 @@ public class TestEcsBandAidPart1 extends TestCoursework {
         Object alice = null;
         try {
           alice = violinistConstructor.newInstance("Alice", soundSystem);
-        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | InstantiationException e) {
+        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException |
+                 InstantiationException e) {
           e.printStackTrace();
           fail(": Failed to create a violinist using Violinist(String, SoundSystem)");
         }
@@ -269,8 +272,8 @@ public class TestEcsBandAidPart1 extends TestCoursework {
           e.printStackTrace();
           fail(": Failed to call Violist#getName() method");
         }
-          assertEquals((Object) soundSystem, soundSystemField.get(alice),
-              "Incorrect violinist's SoundSystem");
+        assertEquals((Object) soundSystem, soundSystemField.get(alice),
+            "Incorrect violinist's SoundSystem");
       });
     }
 
@@ -294,15 +297,16 @@ public class TestEcsBandAidPart1 extends TestCoursework {
           assertEquals((Object) soundSystem, soundSystemField.get(alice),
               "Incorrect violinist's SoundSystem");
           assertEquals((Object) 3, seatField.get(alice), "Incorrect violinist's seat");
-        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | InstantiationException e) {
+        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException |
+                 InstantiationException e) {
           e.printStackTrace();
         }
       });
     }
 
     /**
-     * Test the {@link people.musicians.Violinist#setSeat(int)} method of {@link
-     * people.musicians.Violinist} class
+     * Test the {@link people.musicians.Violinist#setSeat(int)} method of
+     * {@link people.musicians.Violinist} class
      */
     @Test
     @DisplayName("Test people.musicians.Violinist#setSeat(int)")
@@ -315,7 +319,8 @@ public class TestEcsBandAidPart1 extends TestCoursework {
         try {
           Object soundSystem = soundSystemConstructor.newInstance();
           alice = violinistConstructor.newInstance("Alice", soundSystem);
-        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | InstantiationException e) {
+        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException |
+                 InstantiationException e) {
           e.printStackTrace();
           fail(": Failed to set up");
         }
@@ -330,8 +335,8 @@ public class TestEcsBandAidPart1 extends TestCoursework {
     }
 
     /**
-     * Test the {@link people.musicians.Violinist#readScore(int[], boolean)} method of {@link
-     * people.musicians.Violinist} class
+     * Test the {@link people.musicians.Violinist#readScore(int[], boolean)} method of
+     * {@link people.musicians.Violinist} class
      */
     @Test
     @DisplayName("Test people.musicians.Violinist#readScore(int[], boolean)")
@@ -345,7 +350,8 @@ public class TestEcsBandAidPart1 extends TestCoursework {
         try {
           Object soundSystem = soundSystemConstructor.newInstance();
           alice = violinistConstructor.newInstance("Alice", soundSystem);
-        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | InstantiationException e) {
+        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException |
+                 InstantiationException e) {
           e.printStackTrace();
           fail(": Failed to set up");
         }
@@ -364,8 +370,8 @@ public class TestEcsBandAidPart1 extends TestCoursework {
     }
 
     /**
-     * Test the {@link people.musicians.Violinist#playNextNote()} method of {@link
-     * people.musicians.Violinist} class
+     * Test the {@link people.musicians.Violinist#playNextNote()} method of
+     * {@link people.musicians.Violinist} class
      */
     @Test
     @DisplayName("Test people.musicians.Violinist#playNextNote()")
@@ -387,7 +393,8 @@ public class TestEcsBandAidPart1 extends TestCoursework {
           int[] notes = {60, 61, 62};
           setSeatMethod.invoke(alice, 4);
           readScoreMethod.invoke(alice, notes, true);
-        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | InstantiationException e) {
+        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException |
+                 InstantiationException e) {
           e.printStackTrace();
           fail(": Failed to set up");
         }

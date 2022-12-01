@@ -36,13 +36,14 @@ public class Helper {
     return mySoundSystem;
   }
 
-  public static ArrayList<Musician> createMusicianArrayList(SoundSystem mySoundSystem, Scanner musicianReader) {
+  public static ArrayList<Musician> createMusicianArrayList(SoundSystem mySoundSystem,
+      Scanner musicianReader) {
     ArrayList<Musician> myMusicians = new ArrayList<Musician>();
 
     while (musicianReader.hasNextLine()) {
       String line = musicianReader.nextLine();
-      line = line.replaceAll("\\)",""); //removes the trailing ) character at the end
-      String[] words = line.split("\\(" ); //splits the line into the two musician and instrument
+      line = line.replaceAll("\\)", ""); //removes the trailing ) character at the end
+      String[] words = line.split("\\("); //splits the line into the two musician and instrument
       Musician musician = MusicianFactory.createMusician(words[1], words[0], mySoundSystem);
       myMusicians.add(musician);
     }
@@ -103,7 +104,8 @@ public class Helper {
           case "Violin":
             break;
           default:
-            System.err.println("we only accept piano, cello and violin musicians, given " + words[0]);
+            System.err.println(
+                "we only accept piano, cello and violin musicians, given " + words[0]);
             System.err.println("defaulted to Piano");
             words[0] = "Piano"; //dealing with it "gracefully"
         }

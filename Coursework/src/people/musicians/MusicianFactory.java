@@ -4,7 +4,8 @@ import utils.SoundSystem;
 
 public class MusicianFactory {
 
-  public static MusicianPerson createMusician(String instrument, String name, SoundSystem soundSystem) {
+  public static MusicianPerson createMusician(String instrument, String name,
+      SoundSystem soundSystem) {
     if (instrument.equals("Violin")) {
       return new Violinist(name, soundSystem);
     } else if (instrument.equals("Cello")) {
