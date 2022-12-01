@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 import music.Composition;
+import music.MusicScore;
 import people.conductors.Conductor;
 import people.musicians.Musician;
 import utils.Helper;
@@ -104,8 +105,8 @@ public class EcsBandAid {
   }
 
   public void performForAYear() {
-    //plays 3 compositions a year
-      //randomly choose 3 compositions
+      //plays 3 compositions a year
+    //randomly choose 3 compositions
     compositionsToPlay.clear();
     for (int i = 0; i < 3; i++) {
       Collections.shuffle(compositions); //shuffles the compositions ArrayList
@@ -120,20 +121,73 @@ public class EcsBandAid {
     }
     System.out.println();
 
+    //finds out how many musicians of each type we need to perform the three compositions
+    int violinistNeeded = 0;
+    int pianistNeeded = 0;
+    int cellistNeeded = 0;
+    for (Composition composition : compositionsToPlay) {
+      int violinistNeededForComposition = 0;
+      int pianistNeededForComposition = 0;
+      int cellistNeededForComposition = 0;
+      //gets how many musicians of each type we need for this composition
+      for (MusicScore score : composition.getScores()) {
+        switch (score.getInstrumentName()) {
+          case "Violin":
+            violinistNeededForComposition += 1;
+            break;
+          case "Piano":
+            pianistNeededForComposition += 1;
+            break;
+          case "Cello":
+            cellistNeededForComposition += 1;
+            break;
+        }
+      }
+      //if more musicians are needed for this composition then the total counter is increased to
+      // accommodate this composition
+      if (violinistNeededForComposition > violinistNeeded) {
+        violinistNeeded = violinistNeededForComposition;
+      }
+      if (pianistNeededForComposition > pianistNeeded) {
+        pianistNeeded = pianistNeededForComposition;
+      }
+      if (cellistNeededForComposition > cellistNeeded) {
+        cellistNeeded = cellistNeededForComposition;
+      }
+    }
+
       //invite musicians
-    //I will implement that 70% of each musician will accept the invite
-    //ordered randomly, with first come first served basis
-    Collections.shuffle(musicians); //shuffles the musicians ArrayList so it's random
-    for (Musician musician : musicians) {
-      if (bandConductor.isRegistered(musician)) {
-        //don't invite them as they're already registered in the band
-      } else {
-        float random = (float) Math.random(); //random number between 0 and 1
-        if (random <= 0.7) { //musician has accepted the invite (70% acceptance rate)
+    Collections.shuffle(musicians); //shuffles the musicians so it's random
+    //invite the right amount of Violinist
+    for (; violinistNeeded > 0; --violinistNeeded) {
+      for (Musician musician : musicians) {
+        if (!(bandConductor.isRegistered(musician)) && musician.getInstrument().equals("Violin")) {
+          //invite them as they're a Violinist and aren't registered yet
           bandConductor.registerMusician(musician);
-          System.out.println(musician.getName() + " has been invited and accepted the invite");
-        } else { //else skip to the next musician in the world
-          System.out.println(musician.getName() + " has been invited and declined the invite");
+          System.out.println(musician.getName() + " has been invited");
+          break;
+        }
+      }
+    }
+    //invite the right amount of Pianist
+    for (; pianistNeeded > 0; --pianistNeeded) {
+      for (Musician musician : musicians) {
+        if (!(bandConductor.isRegistered(musician)) && musician.getInstrument().equals("Piano")) {
+          //invite them as they're a Pianist and aren't registered yet
+          bandConductor.registerMusician(musician);
+          System.out.println(musician.getName() + " has been invited");
+          break;
+        }
+      }
+    }
+    //invite the right amount of Cellist
+    for (; cellistNeeded > 0; --cellistNeeded) {
+      for (Musician musician : musicians) {
+        if (!(bandConductor.isRegistered(musician)) && musician.getInstrument().equals("Cello")) {
+          //invite them as they're a Cellist and aren't registered yet
+          bandConductor.registerMusician(musician);
+          System.out.println(musician.getName() + " has been invited");
+          break;
         }
       }
     }
@@ -226,14 +280,14 @@ public class EcsBandAid {
   }
 
   public static void main(String[] args) {
-    String musiciansFilename = args[0];
-    String compositionsFilename = args[1];
-    int years = Integer.parseInt(args[2]);
+//    String musiciansFilename = args[0];
+//    String compositionsFilename = args[1];
+//    int years = Integer.parseInt(args[2]);
 
     //testing/debugging purposes
-//    String musiciansFilename =  "musicians.txt";
-//    String compositionsFilename =  "compositions.txt";
-//    int years = 5;
+    String musiciansFilename =  "musicians.txt";
+    String compositionsFilename =  "compositions.txt";
+    int years = 5;
 
     File saveFile = new File("savedSimulation.json");
     if (saveFile.exists()) {
