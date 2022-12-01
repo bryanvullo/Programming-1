@@ -8,7 +8,7 @@ public class MusicianFactory {
     if (instrument.equals("Violin")) {
       return new Violinist(name, soundSystem);
     } else if (instrument.equals("Cello")) {
-      return new Pianist(name, soundSystem);
+      return new Cellist(name, soundSystem);
     } else if (instrument.equals("Piano")) {
       return new Pianist(name, soundSystem);
     } else {
